@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { Button } from 'react-bootstrap'
+import ModalPopup from '../globalModalPopup/ModalPopup'
 import ReactGlobalTable from '../reactTable/ReactGlobalTable'
 import TodoForm from './TodoForm'
 import ToDoTable from './ToDoTable'
@@ -7,23 +9,50 @@ const Todo = () => {
     let ourColm = [
         {
             Header: 'Sr',
-            accessor: 'id',
+            width: 80,
+            Cell: ({ row }) => {
+                return <>{row.index + 1}</>
+            },
         },
         {
             Header: 'Title',
             accessor: 'title',
+            width: 280,
         },
         {
-            Header: 'Title',
+            Header: 'Description',
             accessor: 'description',
+            width: 680,
         },
         {
             Header: 'Status',
             accessor: 'status',
-            // Cell: (props) => {
-            //     console.log("dataaaaaa", props)
-                
-            // }
+            textAlign: 'center',
+            Cell: (cellProps) => {
+                switch (cellProps.value) {
+                    case "todo":
+                        return <div style={{ textAlign: 'center' }}> <span className="text-primary">Todo</span> </div>
+                    case "inProgress":
+                        return <div style={{ textAlign: 'center' }}> <span className="text-warning">Inprogress</span></div>
+                    case "complete":
+                        return <div style={{ textAlign: 'center' }}><span className="text-success">Complete</span></div>
+                    default:
+                        return <></>;
+                }
+            },
+        },
+        {
+            Header: 'Action',
+            width: 180,
+            textAlign: 'center',
+            Cell: ({ row }) => {
+                return (
+                    <div style={{ textAlign: 'center' }}>
+                        <button className="btn btn-warning" onClick={(e) => { handelEdit(row.original.id) }}>Edit</button>
+                        <button className="btn btn-danger" style={{ marginLeft: 4 }} onClick={(e) => { passData(row.original.id, row.original.title) }}>Delete</button>
+                    </div>
+                )
+            }
         },
     ]
     const [updateToDo, setUpdateToDo] = useState([])
@@ -105,6 +134,7 @@ const Todo = () => {
         })
         setSetEditID(null)
         setShow(false)
+        console.log('Delete Handel Click')
     }
     // PASSING ID // TITLE
     const passData = (id, title) => {
@@ -150,6 +180,7 @@ const Todo = () => {
                 validated={validated}
             />
             <br />
+            <h5>Normal Html Table</h5>
             <ToDoTable
                 updateToDo={updateToDo}
                 handelEdit={handelEdit}
@@ -162,27 +193,36 @@ const Todo = () => {
                 delId={delId}
                 delTitle={delTitle}
             />
+            <h5>Using Reusable React Table</h5>
             <ReactGlobalTable
                 columns={ourColm}
                 data={updateToDo}
+                className={'rm-to-table'}
+                defaultPageSize={15}
+                showPagination={false}
+                useSorting={false}
+                showGlobalFilter={false}
             />
+            <ModalPopup
+                show={show}
+                handelDelete={handelDelete}
+                handleClose={handleClose}
+                modalTitle={"To Do App"}
+            >
+                <p>Are You Sure You Want To Delete ? <strong>{delTitle}</strong> Row</p>
+                <div style={{ textAlign: 'right' }}>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Cancel
+                    </Button>
+                    <Button style={{ marginLeft: 8 }} variant="danger" onClick={() => handelDelete(delId)}>
+                        Delete
+                    </Button>
+                </div>
+            </ModalPopup>
         </div>
     )
 }
 export default Todo
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

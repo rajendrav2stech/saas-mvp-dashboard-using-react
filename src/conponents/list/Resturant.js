@@ -39,10 +39,6 @@ const Resturant = () => {
                     <Col lg={12} md={12} sm={12} xs={12} style={{ display: 'flex', marginBottom: 0, justifyContent: 'space-between', alignItems: 'flex-start' }}>
                         <div>
                             <h4 className="rm_global_heading">Restaurants List</h4>
-                            <Breadcrumb>
-                                <Breadcrumb.Item href="#">Page</Breadcrumb.Item>
-                                <Breadcrumb.Item active>Restaurants</Breadcrumb.Item>
-                            </Breadcrumb>
                         </div>
                         <div className="search_bar">
                             <input type="text"

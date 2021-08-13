@@ -890,6 +890,10 @@ table {
   color: #41179d;
 }
 
+.pagination li[disabled] {
+  cursor: no-drop;
+}
+
 .page-item.active .page-link {
   background-color: #41179d !important;
   border-color: #41179d !important;
@@ -1038,6 +1042,7 @@ table {
 
 .search_bar {
   position: relative;
+  margin-bottom: 15px;
 }
 
 .search_bar input {
@@ -1058,5 +1063,9 @@ table {
   top: 11px;
   font-size: 19px;
   color: #757575;
+}
+
+.rm-headder header .search_bar {
+  margin: 0;
 }
 /*# sourceMappingURL=App.css.map */

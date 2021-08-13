@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Link } from "react-router-dom";
 import { json_data } from '../../data/json_data'
-import { TodoContext } from '../toDoAppUseReducer/TodoContext';
-import { ProfileUserContext } from './ProfileUserContext';
+import { TodoContext } from '../toDoAppUseReducer/TodoContext'
+import { ProfileUserContext } from './ProfileUserContext'
 
 
 const SideBar = () => {

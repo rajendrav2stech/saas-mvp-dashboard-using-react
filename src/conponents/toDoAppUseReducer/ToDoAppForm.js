@@ -7,10 +7,6 @@ const ToDoAppForm = ({ onChangeHandel, status, description, title, submitHandel,
             <Form noValidate validated={validated} onSubmit={submitHandel}>
                 <div>
                     <h4 className="rm_global_heading">To Do App <sub style={{ fontSize: 14 }}>Use Reducer / Use Context</sub></h4>
-                    <Breadcrumb>
-                        <Breadcrumb.Item href="#">Page</Breadcrumb.Item>
-                        <Breadcrumb.Item active>Use Reducer & Use Context</Breadcrumb.Item>
-                    </Breadcrumb>
                 </div>
                 <Form.Group>
                     <Form.Label>Title</Form.Label>

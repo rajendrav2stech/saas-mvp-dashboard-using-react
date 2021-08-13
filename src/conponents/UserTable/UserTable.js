@@ -46,10 +46,6 @@ const UserTable = () => {
                     <Col lg={12} md={12} sm={12} xs={12} style={{ display: 'flex', marginBottom: 0, justifyContent: 'space-between', alignItems: 'flex-start' }}>
                         <div>
                             <h4 className="rm_global_heading">Table List</h4>
-                            <Breadcrumb>
-                                <Breadcrumb.Item href="#">Page</Breadcrumb.Item>
-                                <Breadcrumb.Item active>Table List</Breadcrumb.Item>
-                            </Breadcrumb>
                         </div>
                         <div className="search_bar">
                             <input type="text"
@@ -67,20 +63,20 @@ const UserTable = () => {
                             <thead style={{ backgroundColor: '#c1c1c1' }}>
                                 <tr>
                                     <th rowSpan="2">Sr</th>
-                                    <th rowSpan="2" style={{ width: 200 }}>Full Name</th>
+                                    <th rowSpan="2" style={{ width: 300 }}>Full Name</th>
                                     <th rowSpan="2" style={{ width: 100 }}>Gender</th>
-                                    <th rowSpan="2" style={{ width: 100 }}>DOB</th>
+                                    <th rowSpan="2" style={{ width: 200 }}>DOB</th>
                                     <th colSpan="4" style={{ width: 200, textAlign: 'center' }}>Address</th>
                                     <th colSpan="2" style={{ width: 160, textAlign: 'center' }}>Subscription </th>
-                                    <th rowSpan="2" style={{ textAlign: 'center' }}>Action</th>
+                                    <th rowSpan="2" style={{ textAlign: 'center',width: 100 }}>Action</th>
                                 </tr>
                                 <tr>
                                     <th style={{ width: 80 }}>City</th>
                                     <th style={{ width: 100 }}>Street</th>
                                     <th style={{ width: 100 }}>State</th>
                                     <th style={{ width: 100 }}>Country</th>
-                                    <th style={{ textAlign: 'center' }}>Plan</th>
-                                    <th style={{ textAlign: 'center' }}>Status</th>
+                                    <th style={{ textAlign: 'center',width: 100 }}>Plan</th>
+                                    <th style={{ textAlign: 'center',width: 100 }}>Status</th>
                                 </tr>
                             </thead>
                             <tbody>

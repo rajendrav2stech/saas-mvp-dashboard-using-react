@@ -89,10 +89,6 @@ const Profile = () => {
                     <Row>
                         <Col lg={12} md={12} sm={12} xs={12}>
                             <h4 className="rm_global_heading">Profile</h4>
-                            <Breadcrumb>
-                                <Breadcrumb.Item href="#">Page</Breadcrumb.Item>
-                                <Breadcrumb.Item active>Profile</Breadcrumb.Item>
-                            </Breadcrumb>
                             <div className="rm_thum_pic">
                                 <img src={profileUser.results[0].prgofile_thum.image} alt="" className="w-100 th_" />
                                 <div className="profile__">

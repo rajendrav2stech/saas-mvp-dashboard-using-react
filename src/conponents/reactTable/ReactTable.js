@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Badge, Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { json_data } from '../../data/json_data'
 import ReactGlobalTable from './ReactGlobalTable'
@@ -21,10 +21,17 @@ const ReactTable = () => {
                             columns={userColumns}
                             data={userData}
                             className="rm-profile-table"
+                            defaultPageSize={5}
+                            showPagination={true}
+                            useSorting={true}
+                            showGlobalFilter={true}
                         />
                         <ReactGlobalTable
                             columns={columns}
                             data={data}
+                            showPagination={false}
+                            useSorting={false}
+                            showGlobalFilter={false}
                         />
                     </Col>
                 </Row>
@@ -128,7 +135,7 @@ export const usersHead = [
             console.log("Rajuuuuu", row.original.avatar)
             return (
                 <>
-                    <img src={row.original.avatar} alt={row.original.first_name} /> {row.original.first_name} {row.original.last_name}
+                    <img src={row.original.avatar} alt={row.original.first_name} /> {row.original.first_name + " " + row.original.last_name}
                 </>
             )
         },
@@ -214,16 +221,16 @@ export const usersHead = [
                     console.log("originalRow", row.original.subscription)
                     switch (row.original.subscription.status) {
                         case 'Idle': {
-                            return <span style={{ color: 'blue', border: "1px solid", padding: '2px 5px', display: 'block', textAlign: 'center', borderRadius: '30px' }}>Idle</span>
+                            return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="primary">Idle</Badge></div>
                         }
                         case 'Pending': {
-                            return <span style={{ color: 'orange', border: "1px solid", padding: '2px 5px', display: 'block', textAlign: 'center', borderRadius: '30px' }}>Pending</span>
+                            return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark" text="dark">Pending</Badge></div>
                         }
                         case 'Blocked': {
-                            return <span style={{ color: 'red', border: "1px solid", padding: '2px 5px', display: 'block', textAlign: 'center', borderRadius: '30px' }}>Blocked</span>
+                            return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="danger" >Blocked</Badge></div>
                         }
                         case 'Active': {
-                            return <span style={{ color: 'green', border: "1px solid", padding: '2px 5px', display: 'block', textAlign: 'center', borderRadius: '30px' }}>Blocked</span>
+                            return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="success" text="white">Active</Badge></div>
                         }
                         default:
                             return <></>
@@ -240,12 +247,12 @@ export const usersHead = [
         fontWeight: 700,
         Cell: ({ row }) => {
             console.log("Action", row.original.id)
-            return <div style={{ textAlign: 'center' }}> <Link className="view_detils_button"
+            return <div style={{ textAlign: 'center' }}> <Link className="view_detils"
                 to={{
                     pathname: `react-table/${row.original.id}`,
                     state: row.original
                 }}
-            >View</Link> </div>
+            ><VisibilityIcon style={{ color: '#41179d' }} /></Link> </div>
         }
     }
 

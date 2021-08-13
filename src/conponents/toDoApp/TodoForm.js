@@ -6,10 +6,6 @@ const TodoForm = ({ submitHandel, onChangeHandel, title, description, status, up
         <Form noValidate validated={validated} action="" onSubmit={submitHandel}>
             <div>
                 <h4 className="rm_global_heading">To Do App</h4>
-                <Breadcrumb>
-                    <Breadcrumb.Item href="#">Page</Breadcrumb.Item>
-                    <Breadcrumb.Item active>TodoApp</Breadcrumb.Item>
-                </Breadcrumb>
             </div>
             <Form.Group>
                 <Form.Label>Title</Form.Label>

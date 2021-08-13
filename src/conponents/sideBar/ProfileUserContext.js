@@ -5,7 +5,7 @@ export const ProfileUserContext = createContext()
 export const ProfileUserProvider = (props) => {
     const [user, setUser] = useState({
         image: "https://randomuser.me/api/portraits/men/75.jpg",
-        name: 'Rajendra',
+        name: 'Brad Gibson',
         profile: "UI Dev..."
     })
     return (

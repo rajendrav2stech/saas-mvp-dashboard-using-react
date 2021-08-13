@@ -16,10 +16,6 @@ const EmployeeTable = () => {
                     <Col sm={12} xs={12} md={12} lg={12}>
                         <div>
                             <h4 className="rm_global_heading">Global Reusable Table</h4>
-                            <Breadcrumb>
-                                <Breadcrumb.Item href="#">Page</Breadcrumb.Item>
-                                <Breadcrumb.Item active>Table </Breadcrumb.Item>
-                            </Breadcrumb>
                         </div>
                         <TableComponents
                             tHeadData={employeHeadData}
