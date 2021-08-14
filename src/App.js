@@ -3,11 +3,12 @@ import { useState } from 'react'
 import AppRouter from './router/AppRouter'
 import LoginForm from './conponents/login/LoginForm'
 import TodoProvider from './conponents/toDoAppUseReducer/TodoContext'
+import { useHistory } from 'react-router-dom'
 
 function App() {
   let adminUser = [{
-    username: "user1",
-    password: "abc123",
+    username: "admin",
+    password: "admin$123",
     uId: "1",
   },
   {
@@ -21,45 +22,38 @@ function App() {
     uId: "3",
   }]
 
-  let user1 = adminUser.find((item) => item.username === "user1")
-
-
-  // console.log(useData[0].username)
-
+  let user1 = adminUser.find((item) => item.username === "admin")
   const [user, setUser] = useState({ name: '', pass: '' })
   const [err, setErr] = useState({
     msg: "",
     username: "",
     pass: ""
   })
+  const [validated, setValidated] = useState(false)
 
-
-  const Login = (userDetils) => {
-    if (userDetils.name === user1.username && userDetils.pass === user1.password) {
-      console.log('login')
+  // HANDLE - LOGIN
+  const Login = (userDetils, event) => {
+    // let historyD = useHistory()
+    // u
+    // console.log("History", historyD)
+    const form = event.currentTarget
+    if (form.checkValidity() === false) {
+      setValidated(true)
+    } else if (userDetils.name === user1.username && userDetils.pass === user1.password) {
       setUser({
         name: userDetils.name,
         pass: userDetils.password
       })
+      // history.push("/");
     } else {
-      console.log('Input Value is not match')
       setErr({
         msg: 'Input Value is not match !'
       })
     }
-    if (userDetils.name === "") {
-      setErr({
-        username: 'Please Enter User Name !'
-      })
-    } else if (userDetils.pass === "") {
-      setErr({
-        pass: 'Please Enter Password !'
-      })
-    }
-
   }
+
+  // HANDLE - LOGOUT
   const Logout = () => {
-    console.log('Lotout')
     setUser({
       name: '', userName: ''
     })
@@ -68,7 +62,7 @@ function App() {
   return (
     <div>
       {
-        (user.name !== "") ? <TodoProvider><AppRouter Logout={Logout} /> </TodoProvider> : <LoginForm Login={Login} err={err} />
+        (user.name !== "") ? <TodoProvider><AppRouter Logout={Logout} /> </TodoProvider> : <LoginForm Login={Login} err={err} validated={validated} />
       }
     </div>
   );

@@ -23,7 +23,6 @@ import ReactUserDetils from '../conponents/reactTable/ReactUserDetils';
 
 const AppRouter = ({ Logout }) => {
 
-
     return (
         <div>
             <Router>
@@ -43,6 +42,7 @@ const AppRouter = ({ Logout }) => {
                             <Route exact path="/movies-list" component={MoviList} />
                             <Route exact path="/react-table" component={ReactTable} />
                             <Route exact path="/react-table/:id" component={UserDetils} />
+                            <Route exact path="/react-table/:id" component={ReactUserDetils} />
                             <Route exact path="*" component={NotFound} />
                         </Switch>
                     </MoviProvider>

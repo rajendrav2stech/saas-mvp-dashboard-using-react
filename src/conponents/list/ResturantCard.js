@@ -15,9 +15,12 @@ const ResturantCard = ({ items }) => {
         </Tooltip>
     );
     return (
-        <Col lg={4} md={4} className="rm-returant mb-4">
+    <Col lg={4} md={4} className="rm-returant mb-4">
             <div className="card">
-                <img src={items.logo} alt="" />
+                <Link to={{
+                    pathname: `/list/${items.uid}`,
+                    state: items,
+                }}><img src={items.logo} alt="" /></Link>
                 <div className="pad p-3">
                     <Link to={{
                         pathname: `/list/${items.uid}`,

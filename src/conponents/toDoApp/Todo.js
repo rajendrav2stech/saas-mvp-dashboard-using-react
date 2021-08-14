@@ -63,7 +63,7 @@ const Todo = () => {
     const [show, setShow] = useState(false)
     const handleShow = () => setShow(true)
     const handleClose = () => setShow(false)
-    const [validated, setValidated] = useState(false);
+    const [validated, setValidated] = useState(false)
     const [toDoForm, setToDoForm] = useState({
         id: '',
         title: '',

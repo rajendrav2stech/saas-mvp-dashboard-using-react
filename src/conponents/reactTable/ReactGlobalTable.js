@@ -57,12 +57,7 @@ const ReactGlobalTable = ({ columns, data, className, defaultPageSize, showPagin
                                         <th {...column.getHeaderProps(useSorting && column.getSortByToggleProps())}
                                             style={{ textAlign: column.textAlign, width: column.width, fontWeight: column.fontWeight }} >
                                             {column.render('Header')}
-                                            {
-                                                useSorting && <span>
-                                                    {column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""}
-                                                </span>
-                                            }
-
+                                            <span>{column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""}</span>
                                         </th>
                                     ))}
                             </tr>

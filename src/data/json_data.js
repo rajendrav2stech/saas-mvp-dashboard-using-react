@@ -97,7 +97,7 @@ export const json_data = {
             "type": "Ethiopean",
             "description": "To sell delicious and remarkable food and drinks. That the food and drink we sell meets the highest standards of quality, freshness and seasonality and combines both modern-creative and traditional southern styles of cooking. To consistently provide our customers with impeccable service by demonstrating warmth, graciousness, efficiency, knowledge, professionalism and integrity in our work. To have every customer who comes through our doors leave impressed by Maxie’s and excited to come back again. To create and maintain a restaurant that is comprehensive and exceptional in its attention to every detail of operation. To provide all who work with us a friendly, cooperative and rewarding environment which encourages long- term, satisfying, growth employment. To keep our concept fresh, exciting and on the cutting edge of the hospitality and entertainment industry. To be a giving member of the Ithaca community and to use our restaurant to improve the quality of life in the Finger Lakes region.",
             "review": "Brand new. Great design. Odd to hear pop music in a Mexican establishment. Music is a bit loud. It should be background.",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "796.193.8776 x13635",
             "address": "Suite 468 13257 Rowe Glens, Port Kena, PA 23645",
             "hours": {
@@ -145,7 +145,7 @@ export const json_data = {
             "type": "Vietnamese",
             "description": "To deliver an exceptional shopping experience by offering the best service, value, quality, and freshest products while being good stewards of our environment and giving back to the communities we serve.",
             "review": "Fish was high quality but portions were small. $57 for 9 pieces and a hand roll which is fair but on the expensive side.",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "830-590-5177 x97413",
             "address": "7102 Florrie Villages, East Annabelstad, OH 75745",
             "hours": {
@@ -193,7 +193,7 @@ export const json_data = {
             "type": "German",
             "description": "SVIs mission is to deliver quality products at affordable prices to our independent retailers, wholesalers and food service partners around the world by providing international procurement, distribution, marketing and supply chain management.",
             "review": "The chicken nachos were delicious and the atmosphere was great. The frozen margaritas were a little on the weak side. Would probably return for a work happy hour but was pretty disappointed about the lack of free tequila and beer we read about!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "682.992.6951 x688",
             "address": "4752 Lockman Highway, Kuhlmanshire, MD 67490",
             "hours": {
@@ -241,7 +241,7 @@ export const json_data = {
             "type": "Asian",
             "description": "Yoshinoya is in business to create the structure and systems needed to allow our customers access to the majority of their away-from-home daily meal requirements on a one-stop-shop basis. All our products shall be of the highest quality and value, be healthy, nutritious and provided with outstanding personal services at the lowest possible prices consistent with a fair return on investment for our shareholders, job enhancementsecurity for our employees and a level of community involvement by everyone connected with our business. All of our products and services shall be delivered consistently and measured one satisfied customer at a time, whether by company-owned or franchised operations, in superior, clean, convenient, fun and friendly neighborhood environments. We pledge to make Yoshinoya the best place to eat and the best place to work.",
             "review": "I first heard about this place through Instagram post. The drinks looked creative so I made it a point to give it try while in the city. Located inside American Eagle in Times Square they serve up the coolest non-alcoholic beverages. You have an array of options from tea, soda, coffee, latte, water and more. Theres countertops (with phone chargers) so youre able to stand and enjoy your beverage. This visit I opted for the Pegasus latte which was not only beautiful but tasted just as good as it looked. Great staff and great service. This is a must try if you are in the area. Im sure Ill be back soon!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "655.217.2984",
             "address": "Apt. 612 563 Kristle Dam, Joesphshire, MS 08415",
             "hours": {
@@ -289,7 +289,7 @@ export const json_data = {
             "type": "Brazilian",
             "description": "We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat.",
             "review": "For dessert, we ordered the chocolate drizzled churros and they were delicious too! They even came with some fresh fruit (blueberries and strawberries).",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "1-603-852-2226",
             "address": "Apt. 254 3693 Langworth Islands, West Theo, WA 92409-7915",
             "hours": {
@@ -337,7 +337,7 @@ export const json_data = {
             "type": "Pizza",
             "description": "Yoshinoya is in business to create the structure and systems needed to allow our customers access to the majority of their away-from-home daily meal requirements on a one-stop-shop basis. All our products shall be of the highest quality and value, be healthy, nutritious and provided with outstanding personal services at the lowest possible prices consistent with a fair return on investment for our shareholders, job enhancementsecurity for our employees and a level of community involvement by everyone connected with our business. All of our products and services shall be delivered consistently and measured one satisfied customer at a time, whether by company-owned or franchised operations, in superior, clean, convenient, fun and friendly neighborhood environments. We pledge to make Yoshinoya the best place to eat and the best place to work.",
             "review": "The counter is on the left side, and so is the menu. It can get pretty busy with 30 min wait times. I recommend checking the website and see how busy their store is.",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "1-914-484-6267 x297",
             "address": "Apt. 215 84311 Tyler Pines, Lake Deloris, OH 04570-2548",
             "hours": {
@@ -385,7 +385,7 @@ export const json_data = {
             "type": "Burgers",
             "description": "Our mission has been to help people achieve their health and wellness goals. though weve changed over the years, our values have remained the same.",
             "review": "Overall, the evening was a smash and I am so glad there is a new location closer to my office!!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "(952) 752-8164 x558",
             "address": "24537 Toby Underpass, Grahamborough, OR 77570-9058",
             "hours": {
@@ -433,7 +433,7 @@ export const json_data = {
             "type": "European",
             "description": "Our mission is to be a leader in the distribution and merchandising of food, pharmacy, health and personal care items, seasonal merchandise, and related products and services. We place considerable importance on forging strong supplier partnerships. Our suppliers, large or small, local or global, are essential components in accomplishing our mission.",
             "review": "I first heard about this place through Instagram post. The drinks looked creative so I made it a point to give it try while in the city. Located inside American Eagle in Times Square they serve up the coolest non-alcoholic beverages. You have an array of options from tea, soda, coffee, latte, water and more. Theres countertops (with phone chargers) so youre able to stand and enjoy your beverage. This visit I opted for the Pegasus latte which was not only beautiful but tasted just as good as it looked. Great staff and great service. This is a must try if you are in the area. Im sure Ill be back soon!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "661-813-0208",
             "address": "6262 Leland Groves, Valentineville, IA 51582",
             "hours": {
@@ -481,7 +481,7 @@ export const json_data = {
             "type": "Vietnamese",
             "description": "Delhaize Group will achieve leading positions in food retailing in key mature and emerging markets. We accomplish our goal by developing strong regional companies benefiting from and contributing to the Groups strength, expertise and successful practices. Delhaize Group goes to market with a variety of food store formats. The Group is committed to offer a locally differentiated shopping experience to its customers in each of its markets, to deliver superior value and to maintain high social, environmental and ethical standards.",
             "review": "In terms of omakase, they had a few options but the one we chose was the 87 dollar version which include sashimi and sushi.",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "777-465-0593",
             "address": "93907 King Trail, Mosesberg, ME 31751-3748",
             "hours": {
@@ -529,7 +529,7 @@ export const json_data = {
             "type": "Juice \u0026 Smoothies",
             "description": "To sell delicious and remarkable food and drinks. That the food and drink we sell meets the highest standards of quality, freshness and seasonality and combines both modern-creative and traditional southern styles of cooking. To consistently provide our customers with impeccable service by demonstrating warmth, graciousness, efficiency, knowledge, professionalism and integrity in our work. To have every customer who comes through our doors leave impressed by Maxie’s and excited to come back again. To create and maintain a restaurant that is comprehensive and exceptional in its attention to every detail of operation. To provide all who work with us a friendly, cooperative and rewarding environment which encourages long- term, satisfying, growth employment. To keep our concept fresh, exciting and on the cutting edge of the hospitality and entertainment industry. To be a giving member of the Ithaca community and to use our restaurant to improve the quality of life in the Finger Lakes region.",
             "review": "Great place to stop in from a chaotic Times Square adventure! The coffee is great, the drinks are creative and the staff is very nice and hospitable. Cant wait to stop in again. Without a doubt 5 stars from me!!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "740-963-5331 x6518",
             "address": "2933 Lorenzo Groves, Reichertfort, ND 49364",
             "hours": {
@@ -577,7 +577,7 @@ export const json_data = {
             "type": "Vegetarian",
             "description": "Delhaize Group will achieve leading positions in food retailing in key mature and emerging markets. We accomplish our goal by developing strong regional companies benefiting from and contributing to the Groups strength, expertise and successful practices. Delhaize Group goes to market with a variety of food store formats. The Group is committed to offer a locally differentiated shopping experience to its customers in each of its markets, to deliver superior value and to maintain high social, environmental and ethical standards.",
             "review": "In terms of omakase, they had a few options but the one we chose was the 87 dollar version which include sashimi and sushi.",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "508.302.7497",
             "address": "Suite 542 4459 Breitenberg Plaza, Port Mike, TN 45822",
             "hours": {
@@ -625,7 +625,7 @@ export const json_data = {
             "type": "Desserts",
             "description": "Our Mission at Denny’s is to establish beneficial business relationships with diverse suppliers who share our commitment to customer service, quality and competitive pricing.",
             "review": "Overall, the evening was a smash and I am so glad there is a new location closer to my office!!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "603-240-9698 x67374",
             "address": "627 Stamm Trail, Port Andersonmouth, NY 39730",
             "hours": {
@@ -673,7 +673,7 @@ export const json_data = {
             "type": "Thai",
             "description": "To deliver an exceptional shopping experience by offering the best service, value, quality, and freshest products while being good stewards of our environment and giving back to the communities we serve.",
             "review": "My only critique would be that the rice could of used more vingaer and for them to use real wasabi. Also the variety of fish in stock wasnt a lot but hopefully that can change over time. The cost justify the quality youre getting. A solid 4 stars.",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "188-898-4016 x83460",
             "address": "Apt. 509 58880 Pagac Wall, Hermannport, NC 43724",
             "hours": {
@@ -721,7 +721,7 @@ export const json_data = {
             "type": "American (Traditional)",
             "description": "SVIs mission is to deliver quality products at affordable prices to our independent retailers, wholesalers and food service partners around the world by providing international procurement, distribution, marketing and supply chain management.",
             "review": "The counter is on the left side, and so is the menu. It can get pretty busy with 30 min wait times. I recommend checking the website and see how busy their store is.",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "(976) 591-8066 x96656",
             "address": "50920 Tremblay Camp, South Erichtown, AL 72810-1902",
             "hours": {
@@ -769,7 +769,7 @@ export const json_data = {
             "type": "Brazilian",
             "description": "Our Mission at Denny’s is to establish beneficial business relationships with diverse suppliers who share our commitment to customer service, quality and competitive pricing.",
             "review": "Great place to stop in from a chaotic Times Square adventure! The coffee is great, the drinks are creative and the staff is very nice and hospitable. Cant wait to stop in again. Without a doubt 5 stars from me!!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "527.000.0687 x1625",
             "address": "1253 Edgar Loaf, Lake Augustine, TX 82526",
             "hours": {
@@ -817,7 +817,7 @@ export const json_data = {
             "type": "Korean",
             "description": "To ensure that each guest receives prompt, professional, friendly and courteous service. To maintain a clean, comfortable and well maintained premises for our guests and staff. To provide at a fair price – nutritional, well-prepared meals – using only quality ingredients. To ensure that all guests and staff are treated with the respect and dignity they deserve. To thank each guest for the opportunity to serve them. By maintaining these objectives we shall be assured of a fair profit that will allow us to contribute to the community we serve.",
             "review": "The chicken nachos were delicious and the atmosphere was great. The frozen margaritas were a little on the weak side. Would probably return for a work happy hour but was pretty disappointed about the lack of free tequila and beer we read about!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "(725) 628-6541 x357",
             "address": "Apt. 261 6577 Hyatt Inlet, Lake Jamal, NJ 64112",
             "hours": {
@@ -865,7 +865,7 @@ export const json_data = {
             "type": "Ice Cream",
             "description": "To provide an exceptional dining experience that satisfies our guests’ grown-up tastes by being a Cut-Above in everything we do.",
             "review": "Brand new. Great design. Odd to hear pop music in a Mexican establishment. Music is a bit loud. It should be background.",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "550-009-5954 x4915",
             "address": "58406 Hand Knolls, Nikiburgh, SD 13009",
             "hours": {
@@ -913,7 +913,7 @@ export const json_data = {
             "type": "Comfort Food",
             "description": "To deliver an exceptional shopping experience by offering the best service, value, quality, and freshest products while being good stewards of our environment and giving back to the communities we serve.",
             "review": "For dessert, we ordered the chocolate drizzled churros and they were delicious too! They even came with some fresh fruit (blueberries and strawberries).",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "543.887.7415 x2290",
             "address": "Apt. 710 200 Gerald Manor, Diaville, CT 39321-1153",
             "hours": {
@@ -961,7 +961,7 @@ export const json_data = {
             "type": "German",
             "description": "Our mission has been to help people achieve their health and wellness goals. though weve changed over the years, our values have remained the same.",
             "review": "Id have to say that each piece was fresh and had their own slight unique flavor twist to it, pushing the line between traditional edomae and fusion. The Hokkaido uni and the ocean trout topped with cook seaweed was the highlights of the meal. But each piece served was really something special.",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "991-656-5943 x61979",
             "address": "417 O'Keefe Estates, Port Hayden, OR 49000-9774",
             "hours": {
@@ -1009,7 +1009,7 @@ export const json_data = {
             "type": "French",
             "description": "Culver’s Restaurant was founded by the Culver family in 1984, which eventually branched out to more than 300 franchised restaurants all over the US. Culver’s is well-known for its ButterBurger, which made the restaurant extremely famous. They also have other items which include salads, sandwiches, desserts, etc.",
             "review": "Id have to say that each piece was fresh and had their own slight unique flavor twist to it, pushing the line between traditional edomae and fusion. The Hokkaido uni and the ocean trout topped with cook seaweed was the highlights of the meal. But each piece served was really something special.",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "1-181-320-3558 x03755",
             "address": "42918 Donald Stravenue, New Lavinia, OH 46744-8565",
             "hours": {
@@ -1057,7 +1057,7 @@ export const json_data = {
             "type": "American (Traditional)",
             "description": "To achieve and maintain such distinction in food and wine, service, atmosphere and setting that the restaurant gains a first class reputation for gastronomy, gracious and informed hospitality, comfort and beauty which draws new and repeat customers year after year. To achieve the above whilst upholding staff policies and practices which promote a fair and positive working environment. To be aware of and act on our responsibilities as a good corporate citizen to  provide a safe, clean and attractive place for guests to enjoy and for employees to work in - ensure ecologically sound management practices at the restaurant and in our surrounding gardens and woods - undertake meaningful involvement of Restaurant Les Fougères in selected charitable activities in our community and region.",
             "review": "The chicken nachos were delicious and the atmosphere was great. The frozen margaritas were a little on the weak side. Would probably return for a work happy hour but was pretty disappointed about the lack of free tequila and beer we read about!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "1-771-503-6452 x5776",
             "address": "Suite 231 575 Hayes Haven, Lake Jeannetown, MI 56730-2021",
             "hours": {
@@ -1105,7 +1105,7 @@ export const json_data = {
             "type": "Indian",
             "description": "We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat.",
             "review": "Overall, the evening was a smash and I am so glad there is a new location closer to my office!!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "1-722-940-8867",
             "address": "Apt. 870 179 Hintz Alley, West Otha, OH 81449-5714",
             "hours": {
@@ -1153,7 +1153,7 @@ export const json_data = {
             "type": "Italian",
             "description": "Yoshinoya is in business to create the structure and systems needed to allow our customers access to the majority of their away-from-home daily meal requirements on a one-stop-shop basis. All our products shall be of the highest quality and value, be healthy, nutritious and provided with outstanding personal services at the lowest possible prices consistent with a fair return on investment for our shareholders, job enhancementsecurity for our employees and a level of community involvement by everyone connected with our business. All of our products and services shall be delivered consistently and measured one satisfied customer at a time, whether by company-owned or franchised operations, in superior, clean, convenient, fun and friendly neighborhood environments. We pledge to make Yoshinoya the best place to eat and the best place to work.",
             "review": "Ambience was good, service was no nonsense but friendly.",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "980.779.9646 x64565",
             "address": "50474 Crist Cliff, East Taunyabury, WA 22545-0977",
             "hours": {
@@ -1201,7 +1201,7 @@ export const json_data = {
             "type": "Comfort Food",
             "description": "Yoshinoya is in business to create the structure and systems needed to allow our customers access to the majority of their away-from-home daily meal requirements on a one-stop-shop basis. All our products shall be of the highest quality and value, be healthy, nutritious and provided with outstanding personal services at the lowest possible prices consistent with a fair return on investment for our shareholders, job enhancementsecurity for our employees and a level of community involvement by everyone connected with our business. All of our products and services shall be delivered consistently and measured one satisfied customer at a time, whether by company-owned or franchised operations, in superior, clean, convenient, fun and friendly neighborhood environments. We pledge to make Yoshinoya the best place to eat and the best place to work.",
             "review": "Great place to stop in from a chaotic Times Square adventure! The coffee is great, the drinks are creative and the staff is very nice and hospitable. Cant wait to stop in again. Without a doubt 5 stars from me!!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "1-712-750-7041 x18095",
             "address": "Suite 573 3526 Bahringer Mountain, Port Lenard, MO 92264-6295",
             "hours": {
@@ -1249,7 +1249,7 @@ export const json_data = {
             "type": "French",
             "description": "To achieve and maintain such distinction in food and wine, service, atmosphere and setting that the restaurant gains a first class reputation for gastronomy, gracious and informed hospitality, comfort and beauty which draws new and repeat customers year after year. To achieve the above whilst upholding staff policies and practices which promote a fair and positive working environment. To be aware of and act on our responsibilities as a good corporate citizen to  provide a safe, clean and attractive place for guests to enjoy and for employees to work in - ensure ecologically sound management practices at the restaurant and in our surrounding gardens and woods - undertake meaningful involvement of Restaurant Les Fougères in selected charitable activities in our community and region.",
             "review": "Overall, the evening was a smash and I am so glad there is a new location closer to my office!!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "(104) 723-1948 x016",
             "address": "Apt. 287 469 Reinger Corner, Port Kendrick, AL 41341",
             "hours": {
@@ -1297,7 +1297,7 @@ export const json_data = {
             "type": "Greek",
             "description": "Our mission has been to help people achieve their health and wellness goals. though weve changed over the years, our values have remained the same.",
             "review": "The chicken nachos were delicious and the atmosphere was great. The frozen margaritas were a little on the weak side. Would probably return for a work happy hour but was pretty disappointed about the lack of free tequila and beer we read about!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "852-892-3224 x7840",
             "address": "Apt. 460 4921 Sonny Parkway, Vandervortfurt, SC 41339-8554",
             "hours": {
@@ -1345,7 +1345,7 @@ export const json_data = {
             "type": "Vegan",
             "description": "We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat.",
             "review": "The chicken nachos were delicious and the atmosphere was great. The frozen margaritas were a little on the weak side. Would probably return for a work happy hour but was pretty disappointed about the lack of free tequila and beer we read about!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "603-102-3570",
             "address": "Suite 903 8993 Krajcik Tunnel, North Kelly, MT 17492-7326",
             "hours": {
@@ -1393,7 +1393,7 @@ export const json_data = {
             "type": "Mexican",
             "description": "To sell delicious and remarkable food and drinks. That the food and drink we sell meets the highest standards of quality, freshness and seasonality and combines both modern-creative and traditional southern styles of cooking. To consistently provide our customers with impeccable service by demonstrating warmth, graciousness, efficiency, knowledge, professionalism and integrity in our work. To have every customer who comes through our doors leave impressed by Maxie’s and excited to come back again. To create and maintain a restaurant that is comprehensive and exceptional in its attention to every detail of operation. To provide all who work with us a friendly, cooperative and rewarding environment which encourages long- term, satisfying, growth employment. To keep our concept fresh, exciting and on the cutting edge of the hospitality and entertainment industry. To be a giving member of the Ithaca community and to use our restaurant to improve the quality of life in the Finger Lakes region.",
             "review": "My only critique would be that the rice could of used more vingaer and for them to use real wasabi. Also the variety of fish in stock wasnt a lot but hopefully that can change over time. The cost justify the quality youre getting. A solid 4 stars.",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "227-632-1611 x84414",
             "address": "Apt. 915 1081 Milan Cape, Lake Gildamouth, CO 52098-8050",
             "hours": {
@@ -1441,7 +1441,7 @@ export const json_data = {
             "type": "Indian",
             "description": "To sell delicious and remarkable food and drinks. That the food and drink we sell meets the highest standards of quality, freshness and seasonality and combines both modern-creative and traditional southern styles of cooking. To consistently provide our customers with impeccable service by demonstrating warmth, graciousness, efficiency, knowledge, professionalism and integrity in our work. To have every customer who comes through our doors leave impressed by Maxie’s and excited to come back again. To create and maintain a restaurant that is comprehensive and exceptional in its attention to every detail of operation. To provide all who work with us a friendly, cooperative and rewarding environment which encourages long- term, satisfying, growth employment. To keep our concept fresh, exciting and on the cutting edge of the hospitality and entertainment industry. To be a giving member of the Ithaca community and to use our restaurant to improve the quality of life in the Finger Lakes region.",
             "review": "Great place to stop in from a chaotic Times Square adventure! The coffee is great, the drinks are creative and the staff is very nice and hospitable. Cant wait to stop in again. Without a doubt 5 stars from me!!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "(774) 151-1531 x164",
             "address": "Suite 311 3381 Rosetta Road, Monahanborough, NJ 63963-7146",
             "hours": {
@@ -1489,7 +1489,7 @@ export const json_data = {
             "type": "American (New)",
             "description": "We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat.",
             "review": "The chicken nachos were delicious and the atmosphere was great. The frozen margaritas were a little on the weak side. Would probably return for a work happy hour but was pretty disappointed about the lack of free tequila and beer we read about!",
-            "logo": "https://loremflickr.com/500/500/restaurant",
+            "logo": "https://media-cdn.tripadvisor.com/media/photo-s/15/9c/39/1f/niche.jpg",
             "phone_number": "545.523.7500 x18801",
             "address": "Apt. 769 179 Eloy Squares, Gwendaview, NH 71105",
             "hours": {
