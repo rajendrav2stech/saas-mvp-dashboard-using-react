@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import { Container, Row, Col, Card } from 'react-bootstrap'
 import profileUser from '../../data/userProfileData.json'
-import { FaRegEnvelope, FaPhoneAlt, FaGlobeAmericas, FaBirthdayCake, FaAddressCard } from "react-icons/fa";
+import { FaRegEnvelope, FaPhoneAlt, FaGlobeAmericas, FaBirthdayCake, FaAddressCard } from "react-icons/fa"
 
 const Profile = () => {
     return (
@@ -82,4 +82,6 @@ const Profile = () => {
     )
 }
 
+
 export default Profile
+

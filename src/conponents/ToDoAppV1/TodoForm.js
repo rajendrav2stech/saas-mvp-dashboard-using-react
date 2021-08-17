@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form } from 'react-bootstrap'
+import PropTypes from 'prop-types'
 
 const TodoForm = ({ submitHandel, onChangeHandel, title, description, status, updateButton, cancelHandel, validated }) => {
     return (
@@ -63,5 +64,16 @@ const TodoForm = ({ submitHandel, onChangeHandel, title, description, status, up
         </Form >
     )
 }
+
+TodoForm.propTypes = {
+    onChangeHandel: PropTypes.func,
+    status: PropTypes.string,
+    description: PropTypes.string,
+    title: PropTypes.string,
+    validated: PropTypes.bool,
+    updateButton: PropTypes.bool,
+    cancelHandel: PropTypes.func,
+}
+
 
 export default TodoForm

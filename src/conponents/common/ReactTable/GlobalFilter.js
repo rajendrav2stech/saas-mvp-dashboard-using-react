@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaSearch } from "react-icons/fa"
+import PropTypes from 'prop-types'
 
 const GlobalFilter = ({ filter, setFilter }) => {
     return (
@@ -15,6 +16,11 @@ const GlobalFilter = ({ filter, setFilter }) => {
             <FaSearch />
         </div>
     )
+}
+
+GlobalFilter.propTypes = {
+    filter: PropTypes.any,
+    setFilter: PropTypes.func.isRequired
 }
 
 export default GlobalFilter

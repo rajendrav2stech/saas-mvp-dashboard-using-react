@@ -1,5 +1,5 @@
 [{
-    "gender": "male",
+    "gender": 12,
     "destination": "React developer",
     "name": {
         "title": "",

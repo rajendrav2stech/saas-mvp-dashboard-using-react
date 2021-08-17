@@ -1,7 +1,8 @@
 import React from 'react'
 import { DropdownButton } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { FaBell, FaTelegramPlane } from "react-icons/fa";
+import { FaBell, FaTelegramPlane } from "react-icons/fa"
+import PropTypes from 'prop-types'
 
 const Nav = ({ Logout }) => {
     return (
@@ -26,6 +27,10 @@ const Nav = ({ Logout }) => {
             </header>
         </div>
     )
+}
+
+Nav.propTypes = {
+    Logout: PropTypes.func.isRequired
 }
 
 export default Nav

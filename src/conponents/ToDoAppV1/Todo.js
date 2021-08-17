@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Badge, Button } from 'react-bootstrap'
-import ModalPopup from '../common/GlobalModalPopup/ModalPopup'
+import ModalPopup from '../common/ModalPopup/ModalPopup'
 import ReactGlobalTable from '../common/ReactTable/ReactGlobalTable'
 import TodoForm from './TodoForm'
 import ToDoTable from './ToDoTable'

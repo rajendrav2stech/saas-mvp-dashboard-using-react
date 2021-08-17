@@ -2,6 +2,7 @@ import React from 'react'
 import { Col, Container, Row, Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FaArrowLeft, FaPhoneAlt, FaMapMarkerAlt, FaRegClock, FaWineGlassAlt } from "react-icons/fa"
+import PropTypes from 'prop-types'
 
 const RstDetsils = ({ rsData, isclosed }) => {
     return (
@@ -96,6 +97,42 @@ const RstDetsils = ({ rsData, isclosed }) => {
             </div>
         </div>
     )
+}
+
+RstDetsils.propTypes = {
+    rsData: PropTypes.shape({
+        logo: PropTypes.string,
+        name: PropTypes.string,
+        type: PropTypes.string,
+        description: PropTypes.string,
+        review: PropTypes.string,
+        phone_number: PropTypes.string,
+        address: PropTypes.string,
+        hours: PropTypes.shape({
+            sunday: PropTypes.shape({
+                is_closed: PropTypes.bool
+            }),
+            saturday: PropTypes.shape({
+                is_closed: PropTypes.bool
+            }),
+            friday: PropTypes.shape({
+                is_closed: PropTypes.bool
+            }),
+            thursday: PropTypes.shape({
+                is_closed: PropTypes.bool
+            }),
+            wednesday: PropTypes.shape({
+                is_closed: PropTypes.bool
+            }),
+            tuesday: PropTypes.shape({
+                is_closed: PropTypes.bool
+            }),
+            monday: PropTypes.shape({
+                is_closed: PropTypes.bool
+            }),
+        })
+    }),
+    isclosed: PropTypes.bool,
 }
 
 export default RstDetsils

@@ -1,5 +1,5 @@
 import React from 'react'
-import TableComponents from '../GlobalTableBody/TableComponents'
+import TableComponents from '../common/HtmlTable/TableComponents'
 import { Container, Row, Col } from 'react-bootstrap'
 
 const EmployeeTable = () => {

@@ -166,7 +166,7 @@ export const usersHead = [
             return <div style={{ textAlign: 'center' }}> <Link className="view_detils"
                 to={{
                     pathname: `react-table/${row.original.id}`,
-                    state: row.original
+                    state: row.original,
                 }}
             ><FaEye style={{ fontSize: 18, color: '#41179d' }} /></Link> </div>
         }

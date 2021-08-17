@@ -1,6 +1,8 @@
 import React from 'react'
-import { Table, Button } from 'react-bootstrap'
-import ModalPopup from '../common/GlobalModalPopup/ModalPopup'
+import { Table, Button, Badge } from 'react-bootstrap'
+import ModalPopup from '../common/ModalPopup/ModalPopup'
+import PropTypes from 'prop-types'
+import { FaEdit, FaTrash } from "react-icons/fa"
 
 const ToDoTables = ({ todo, updateToDo, handelEdit, handelDelete, editID, handleClose, show, passData, delId, delTitle }) => {
 
@@ -25,13 +27,13 @@ const ToDoTables = ({ todo, updateToDo, handelEdit, handelDelete, editID, handle
                                     <td>{items.title}</td>
                                     <td>{items.description}</td>
                                     <td>
-                                        {items.status === "todo" ? <span style={{ color: 'blue' }}>Todo</span> : null}
-                                        {items.status === "inProgress" ? <span style={{ color: 'orange' }} > Inprogress</span> : null}
-                                        {items.status === "complete" ? <span style={{ color: 'green' }} > Complete</span> : null}
+                                        {items.status === "todo" ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="primary">Todo</Badge> </div> : null}
+                                        {items.status === "inProgress" ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark" text="dark">In Progress</Badge></div> : null}
+                                        {items.status === "complete" ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="success" text="white">Complete</Badge></div> : null}
                                     </td>
                                     <td style={{ textAlign: 'center' }}>
-                                        <button className="btn btn-warning" onClick={(e) => { handelEdit(items.id) }}>Edit</button>
-                                        <button className="btn btn-danger" style={{ marginLeft: 4 }} onClick={(e) => { passData(items.id, items.title) }}>Delete</button>
+                                        <FaEdit onClick={(e) => { handelEdit(items.id) }} className="edit_icon" />
+                                        <FaTrash onClick={(e) => { passData(items.id, items.title) }} className="delete_icon" />
                                     </td>
                                 </tr>
                             )
@@ -61,5 +63,15 @@ const ToDoTables = ({ todo, updateToDo, handelEdit, handelDelete, editID, handle
         </div >
     )
 }
-
+ToDoTables.propTypes = {
+    todo: PropTypes.any,
+    handelEdit: PropTypes.func.isRequired,
+    handelDelete: PropTypes.func.isRequired,
+    editID: PropTypes.any,
+    handleClose: PropTypes.func.isRequired,
+    show: PropTypes.bool.isRequired,
+    passData: PropTypes.func.isRequired,
+    delId: PropTypes.any,
+    delTitle: PropTypes.any
+}
 export default ToDoTables

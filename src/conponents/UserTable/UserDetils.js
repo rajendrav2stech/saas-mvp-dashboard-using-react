@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row, Tabs, Tab, Table } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import users from '../../data/userTableListData.json'
 import { FaArrowLeft, FaIdCard, FaPhoneAlt, FaBirthdayCake, FaTransgender, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
 
-const UserDetils = ({ match, location }) => {
+
+const UserDetils = ({ match }) => {
+    let history = useHistory()
     let ourData = users
     const [items, setItems] = useState({
         employment: {},
@@ -20,12 +22,16 @@ const UserDetils = ({ match, location }) => {
         setItems(OurSetData)
     }, [])
 
+    const goBack = () => {
+        history.goBack()
+    }
+
     return (
         <div className="rm-body user_detils">
             <Container fluid style={{ padding: '0 30px', }}>
                 <Row>
                     <Col lg={12} md={12} sm={12} xs={12} className="backt_restorant m-0 p-0">
-                        <Link to="/user-table"> <FaArrowLeft /> Back to User</Link>
+                        <Link to={''} onClick={goBack}> <FaArrowLeft /> Back to User</Link>
                     </Col>
                 </Row>
             </Container>

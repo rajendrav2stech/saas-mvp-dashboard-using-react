@@ -4,6 +4,7 @@ import { FaLock, FaUserAlt } from "react-icons/fa"
 import { useHistory } from 'react-router-dom'
 import adminUser from '../../data/userData.json'
 import logo from '../../../src/assets/image/logo.png'
+import PropTypes from 'prop-types'
 
 const LoginForm = ({ onLoginSuccess }) => {
     let history = useHistory()
@@ -88,5 +89,7 @@ const LoginForm = ({ onLoginSuccess }) => {
         </div >
     )
 }
-
+LoginForm.propTypes = {
+    onLoginSuccess: PropTypes.func.isRequired
+}
 export default LoginForm

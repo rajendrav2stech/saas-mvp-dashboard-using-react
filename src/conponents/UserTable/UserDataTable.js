@@ -1,9 +1,10 @@
 import React from 'react'
 import { Badge } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { FaEye } from "react-icons/fa";
+import { FaEye } from "react-icons/fa"
+import PropTypes from 'prop-types'
 
-const UserDataTable = ({ items, id }) => {
+const UserDataTable = ({ items }) => {
     return (
         <tr key={items.id}>
             <td style={{ fontWeight: 700 }}><img src={items.avatar} alt="" /> {items.first_name} {items.last_name}</td>
@@ -27,6 +28,22 @@ const UserDataTable = ({ items, id }) => {
         </tr >
     )
 }
-
+UserDataTable.propTypes = {
+    items: PropTypes.shape({
+        first_name: PropTypes.string,
+        last_name: PropTypes.string,
+        gender: PropTypes.string,
+        address: PropTypes.shape({
+            city:  PropTypes.string,
+            street_name: PropTypes.string,
+            state: PropTypes.string,
+            country: PropTypes.string,
+        }),
+        subscription: PropTypes.shape({
+            plan: PropTypes.any,
+            status: PropTypes.any,
+        })
+    })
+}
 export default UserDataTable
 

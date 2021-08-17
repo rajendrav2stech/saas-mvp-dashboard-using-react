@@ -3,6 +3,7 @@ import { Table } from 'react-bootstrap'
 import { useTable, useSortBy, usePagination, useGlobalFilter } from 'react-table'
 import GlobalFilter from './GlobalFilter'
 import { FaSortDown, FaSortUp, FaSort, FaAngleDoubleLeft, FaAngleLeft, FaAngleRight, FaAngleDoubleRight, FaAngleDown } from "react-icons/fa"
+import PropTypes from 'prop-types'
 
 const ReactGlobalTable = ({ columns, data, className, defaultPageSize, showPagination, useSorting, showGlobalFilter, editID }) => {
     let isPageSize = defaultPageSize > 0 ? defaultPageSize : data.length
@@ -148,5 +149,14 @@ const ReactGlobalTable = ({ columns, data, className, defaultPageSize, showPagin
         </div >
     )
 }
-
+ReactGlobalTable.propTypes = {
+    columns: PropTypes.array,
+    data: PropTypes.array,
+    className: PropTypes.string,
+    defaultPageSize: PropTypes.number,
+    showPagination: PropTypes.bool,
+    useSorting: PropTypes.bool,
+    showGlobalFilter: PropTypes.bool,
+    editID:  PropTypes.string,
+}
 export default ReactGlobalTable

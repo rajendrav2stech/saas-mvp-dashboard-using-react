@@ -1,7 +1,8 @@
 import React from 'react'
 import { Table, Button, Badge } from 'react-bootstrap'
-import ModalPopup from '../common/GlobalModalPopup/ModalPopup'
-import { FaEdit, FaTrash } from "react-icons/fa";
+import ModalPopup from '../common/ModalPopup/ModalPopup'
+import { FaEdit, FaTrash } from "react-icons/fa"
+import PropTypes from 'prop-types'
 
 const ToDoTable = ({ updateToDo, handelEdit, handelDelete, editID, handleClose, show, passData, delId, delTitle }) => {
 
@@ -61,4 +62,15 @@ const ToDoTable = ({ updateToDo, handelEdit, handelDelete, editID, handleClose, 
     )
 }
 
+ToDoTable.propTypes = {
+    updateToDo: PropTypes.any,
+    handelEdit: PropTypes.func.isRequired,
+    handelDelete: PropTypes.func.isRequired,
+    editID: PropTypes.any,
+    handleClose: PropTypes.func.isRequired,
+    show: PropTypes.bool.isRequired,
+    passData: PropTypes.func.isRequired,
+    delId: PropTypes.any,
+    delTitle: PropTypes.any
+}
 export default ToDoTable
