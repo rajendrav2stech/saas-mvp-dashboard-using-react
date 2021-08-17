@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import LoadinScreen from '../loading/LoadinScreen'
+import LoadinScreen from '../common/Loading/LoadinScreen'
 import RstDetsils from './RstDetsils'
 
 const ResturantDetails = () => {
@@ -28,8 +28,7 @@ const ResturantDetails = () => {
             setrsData(rSData)
             setLoading(false)
         }, 2000)
-    }, [])
-    console.log("DATA", data)
+    }, [rSData])
     return (
         <div className="rm-body">
             {

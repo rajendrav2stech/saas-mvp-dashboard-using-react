@@ -1,6 +1,6 @@
 import React from 'react'
 import { Table, Button } from 'react-bootstrap'
-import ModalPopup from '../globalModalPopup/ModalPopup'
+import ModalPopup from '../common/GlobalModalPopup/ModalPopup'
 
 const ToDoTables = ({ todo, updateToDo, handelEdit, handelDelete, editID, handleClose, show, passData, delId, delTitle }) => {
 

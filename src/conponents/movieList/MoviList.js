@@ -20,7 +20,6 @@ const MoviList = () => {
     }
     const submitMovieList = (event) => {
         event.preventDefault()
-        // console.log(mlist)
         if (mlist.names === "") {
             alert('Please fill move name')
         } else if (mlist.prices === "") {
@@ -31,7 +30,6 @@ const MoviList = () => {
                 name: mlist.names,
                 price: mlist.prices
             }]
-            console.log(mlist.id)
             setMovies(updateData)
         }
         setMlist({

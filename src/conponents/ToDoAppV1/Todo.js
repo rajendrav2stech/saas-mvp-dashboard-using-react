@@ -1,28 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import { Button } from 'react-bootstrap'
-import ModalPopup from '../globalModalPopup/ModalPopup'
-import ReactGlobalTable from '../reactTable/ReactGlobalTable'
+import React, { useState } from 'react'
+import { Badge, Button } from 'react-bootstrap'
+import ModalPopup from '../common/GlobalModalPopup/ModalPopup'
+import ReactGlobalTable from '../common/ReactTable/ReactGlobalTable'
 import TodoForm from './TodoForm'
 import ToDoTable from './ToDoTable'
+import { FaEdit, FaTrash } from "react-icons/fa";
 
 const Todo = () => {
     let ourColm = [
         {
-            Header: 'Sr',
-            width: 80,
-            Cell: ({ row }) => {
-                return <>{row.index + 1}</>
-            },
-        },
-        {
             Header: 'Title',
             accessor: 'title',
-            width: 280,
+            width: 240,
+            defaultCanSort: false,
+            disableSortBy: true,
         },
         {
             Header: 'Description',
             accessor: 'description',
-            width: 680,
+            width: 700,
+            defaultCanSort: false,
+            disableSortBy: true,
         },
         {
             Header: 'Status',
@@ -31,15 +29,18 @@ const Todo = () => {
             Cell: (cellProps) => {
                 switch (cellProps.value) {
                     case "todo":
-                        return <div style={{ textAlign: 'center' }}> <span className="text-primary">Todo</span> </div>
+                        return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="primary">Todo</Badge> </div>
                     case "inProgress":
-                        return <div style={{ textAlign: 'center' }}> <span className="text-warning">Inprogress</span></div>
+                        return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark" text="dark">In Progress</Badge></div>
                     case "complete":
-                        return <div style={{ textAlign: 'center' }}><span className="text-success">Complete</span></div>
+                        return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="success" text="white">Complete</Badge></div>
                     default:
                         return <></>;
                 }
             },
+            width: 140,
+            defaultCanSort: false,
+            disableSortBy: true,
         },
         {
             Header: 'Action',
@@ -48,8 +49,8 @@ const Todo = () => {
             Cell: ({ row }) => {
                 return (
                     <div style={{ textAlign: 'center' }}>
-                        <button className="btn btn-warning" onClick={(e) => { handelEdit(row.original.id) }}>Edit</button>
-                        <button className="btn btn-danger" style={{ marginLeft: 4 }} onClick={(e) => { passData(row.original.id, row.original.title) }}>Delete</button>
+                        <FaEdit onClick={(e) => { handelEdit(row.original.id) }} className="edit_icon" />
+                        <FaTrash style={{ marginLeft: 4 }} onClick={(e) => { passData(row.original.id, row.original.title) }} className="delete_icon" />
                     </div>
                 )
             }
@@ -122,7 +123,7 @@ const Todo = () => {
     }
     // HANDEl DELETE 
     const handelDelete = (deleteId) => {
-        let item = [...updateToDo];
+        let item = [...updateToDo]
         let deleteItem = item.filter((items, index) => {
             return (items.id !== deleteId)
         })
@@ -134,7 +135,6 @@ const Todo = () => {
         })
         setSetEditID(null)
         setShow(false)
-        console.log('Delete Handel Click')
     }
     // PASSING ID // TITLE
     const passData = (id, title) => {
@@ -160,6 +160,7 @@ const Todo = () => {
     // CANCEL HANDEL
     const cancelHandel = event => {
         setSetEditID(null)
+        setUpdateButton(true)
         setToDoForm({
             title: '',
             description: '',
@@ -180,6 +181,18 @@ const Todo = () => {
                 validated={validated}
             />
             <br />
+            <h5>Using Reusable React Table</h5>
+            <ReactGlobalTable
+                columns={ourColm}
+                data={updateToDo}
+                className={'rm-to-table'}
+                defaultPageSize={15}
+                showPagination={false}
+                useSorting={false}
+                showGlobalFilter={false}
+                editID={editID}
+            />
+            <br />
             <h5>Normal Html Table</h5>
             <ToDoTable
                 updateToDo={updateToDo}
@@ -193,16 +206,7 @@ const Todo = () => {
                 delId={delId}
                 delTitle={delTitle}
             />
-            <h5>Using Reusable React Table</h5>
-            <ReactGlobalTable
-                columns={ourColm}
-                data={updateToDo}
-                className={'rm-to-table'}
-                defaultPageSize={15}
-                showPagination={false}
-                useSorting={false}
-                showGlobalFilter={false}
-            />
+
             <ModalPopup
                 show={show}
                 handelDelete={handelDelete}
@@ -223,12 +227,3 @@ const Todo = () => {
     )
 }
 export default Todo
-
-
-
-
-            // let updateTodoRow = ourUpdate.find((items) => items.id === editID)
-            // updateTodoRow.title = toDoForm.title
-            // updateTodoRow.description = toDoForm.description
-            // updateTodoRow.status = toDoForm.status
-            // setUpdateToDo(updateTodoRow)

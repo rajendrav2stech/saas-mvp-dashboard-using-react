@@ -27,6 +27,27 @@ body {
     padding: 40px;
     box-shadow: 0px 1px 3px 2px #dedede;
     border-radius: 6px;
+    position: relative;
+    background-color: #41179d;
+    svg {
+        position: absolute;
+        top: 37px;
+        font-size: 14px;
+        left: 13px;
+        color: #6a6a6b;
+    }
+    .form-control {
+        padding-left: 38px;
+    }
+    h5 {
+        margin-bottom: 25px;
+        img {
+            max-width: 140px;
+        }
+    }
+    .form-label {
+        color: #ffffff;
+    }
 }
 
 .rm-form form .pad label {
@@ -61,7 +82,7 @@ p {
             a {
                 display: block;
                 font-size: 13px;
-                color: #ffffff;
+                color: #bfbfbf;
                 padding: 15px 25px;
                 font-weight: 500;
                 text-decoration: none;
@@ -74,10 +95,13 @@ p {
             }
             a.active {
                 background-color: #f2f2f2;
-                color: #41179d;
+                svg {
+                    color: #41179d;
+                }
+                color: #282828;
                 &::after {
                     content: "";
-                    background-image: url('../src/assets/image/top_layer.png');
+                    background-image: url('../image/top_layer.png');
                     background-repeat: no-repeat;
                     height: 50px;
                     width: 50px;
@@ -87,7 +111,7 @@ p {
                 }
                 &::before {
                     content: "";
-                    background-image: url('../src/assets/image/button_layer.png');
+                    background-image: url('../image/button_layer.png');
                     background-repeat: no-repeat;
                     height: 50px;
                     width: 50px;
@@ -100,7 +124,7 @@ p {
     }
     &::after {
         content: "";
-        background-image: url('../src/assets/image/side_top.png');
+        background-image: url('../image/side_top.png');
         background-repeat: no-repeat;
         height: 50px;
         width: 50px;
@@ -110,7 +134,7 @@ p {
     }
     &::before {
         content: "";
-        background-image: url('../src/assets/image/side-button.png');
+        background-image: url('../image/side-button.png');
         background-repeat: no-repeat;
         height: 38px;
         width: 40px;
@@ -209,7 +233,7 @@ p {
                         height: 40px;
                         width: 40px;
                         border-radius: 50%;
-                        border: 3px solid #41179d;
+                        border: 1px solid #41179d;
                     }
                     .name {
                         font-weight: 700;
@@ -253,6 +277,14 @@ body {
         border-left: 1px solid;
         margin-left: 25px;
         padding-left: 25px;
+    }
+    .rm-logo {
+        margin-bottom: 35px;
+        text-align: left;
+        img {
+            width: 100%;
+            max-width: 140px;
+        }
     }
 }
 
@@ -306,6 +338,7 @@ body {
             .phone {
                 display: block;
                 color: #a7a7a7;
+                margin: 0;
                 padding-bottom: 0px;
                 font-size: 11px;
             }
@@ -433,6 +466,7 @@ body {
         th {
             font-size: 13px;
             vertical-align: top;
+            position: relative;
         }
     }
 }
@@ -493,18 +527,6 @@ table {
 
 .rm-to-table th {
     padding: 20px 10px;
-}
-
-.rm-to-table td span {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 3px 15px;
-    border: 1px solid;
-    text-transform: capitalize;
-    border-radius: 25px;
-    min-width: 110px;
-    margin: 0 auto;
-    text-align: center;
 }
 
 .rm-to-table .trbgColor {
@@ -617,6 +639,8 @@ table {
     background-color: #f5f5f5 !important;
     box-shadow: 0px 6px 3px #dcdcdc;
     margin-bottom: 30px !important;
+    margin-left: -12px;
+    margin-right: -12px;
     a {
         border-radius: 0 !important;
         border: 0 !important;
@@ -640,7 +664,6 @@ table {
 .personal_detils {
     padding: 25px;
     border-radius: 4px 4px;
-    margin-top: 15px;
     align-items: center;
     background-color: #ffffff !important;
     box-shadow: 0px 1px 5px #dcdcdc;
@@ -868,7 +891,7 @@ table {
         border: 0;
         border-radius: 8px;
         box-shadow: 0px 1px 5px #e2e2e2;
-        margin-bottom: 25px;
+        margin-bottom: 0px;
         h5 {
             font-size: 16px;
             margin-bottom: 7px;
@@ -898,6 +921,74 @@ table {
                 &:last-child {
                     margin-bottom: 0;
                 }
+            }
+        }
+    }
+    .card_pad_.media {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -8px;
+            margin-right: -8px;
+            li {
+                flex: 0 0 auto;
+                width: 33.33%;
+                img {
+                    width: 100%;
+                    padding: 0 8px;
+                    height: 65px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    .card_pad_.post {
+        .post_ {
+            display: flex;
+            justify-content: space-between;
+            .user_ {
+                display: flex;
+                align-items: center;
+                img {
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    border: 2px solid #41179d;
+                    margin-right: 10px;
+                }
+                h5 {
+                    font-size: 14px;
+                    margin: 0;
+                    margin-bottom: 2px;
+                }
+                h6 {
+                    font-size: 12px;
+                    font-weight: 400;
+                    margin: 0;
+                    color: #bfbfbf;
+                }
+            }
+        }
+        .post_review {
+            h5 {
+                font-size: 12px;
+                margin-top: 10px;
+                span {
+                    display: block;
+                    color: #bfbfbf;
+                    font-weight: 500;
+                    line-height: 16px;
+                }
+                span.tags {
+                    color: #41179d;
+                    font-weight: 700;
+                }
+            }
+            img {
+                width: 100%;
+                height: 160px;
+                object-fit: cover;
+                object-position: center;
             }
         }
     }
@@ -957,14 +1048,19 @@ table {
     padding: 8px 35px;
     font-size: 14px;
     font-weight: 500;
-    color: #ffffff;
-    border: 1px solid #41179d;
+    color: #41179d;
+    font-weight: 700;
+    border: 1px solid #ffffff;
     border-radius: 30px;
     text-decoration: none;
     right: 20px;
     top: 20px;
-    background-color: #41179d;
-    margin-top: 25px;
+    background-color: #ffffff;
+    margin-top: 25px !important;
+}
+
+.invalid-feedback {
+    color: #ff6b6b;
 }
 
 .rm-returant {
@@ -978,5 +1074,60 @@ table {
                 box-shadow: 0px 1px 5px #e2e2e2;
             }
         }
+    }
+}
+
+.blobal_btn {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    font-weight: 500;
+    color: #41179d;
+    text-decoration: none;
+    &:hover {
+        color: #41179d;
+    }
+}
+
+.edit_icon {
+    font-size: 20px;
+    margin-right: 4px;
+    color: #ffc107;
+    cursor: pointer;
+}
+
+.delete_icon {
+    font-size: 18px;
+    margin-left: 4px;
+    color: #dc3545;
+    cursor: pointer;
+}
+
+.rm-headder header .header_rightBarbar ul .profile____ {
+    .dropdown-menu.show {
+        right: 0 !important;
+        left: auto !important;
+        transform: none !important;
+        top: 38px !important;
+        border: 0;
+        box-shadow: 0px 1px 5px #e2e2e2;
+        border-radius: 8px;
+    }
+}
+
+.rm-profile-table {
+    position: relative;
+    .search_bar {
+        width: 380px;
+        position: absolute;
+        right: 0;
+        top: -56px;
+    }
+}
+
+#uncontrolled-tab-example-tabpane-about {
+    .row {
+        margin-left: -20px;
+        margin-right: -20px;
     }
 }

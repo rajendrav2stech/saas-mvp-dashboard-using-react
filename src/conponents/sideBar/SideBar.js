@@ -1,34 +1,76 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Link } from "react-router-dom";
-import { json_data } from '../../data/json_data'
-import { TodoContext } from '../toDoAppUseReducer/TodoContext'
-import { ProfileUserContext } from './ProfileUserContext'
-
+import { TodoContext } from '../ToDoAppV2/TodoContext'
+import logo from '../../assets/image/logo.png'
+import { FaIdCardAlt, FaUtensils, FaClipboardList, FaRegAddressBook } from "react-icons/fa";
 
 const SideBar = () => {
+
+    let menuList = [
+        {
+            id: 'profile',
+            value: 'Profile',
+            icon: <FaIdCardAlt />,
+            url: '/'
+        },
+        {
+            id: 'list',
+            value: 'Restaurant grid view',
+            icon: <FaUtensils />,
+            url: '/list'
+        },
+        {
+            id: 'to-do-app',
+            value: 'To do app v1',
+            icon: <FaClipboardList />,
+            url: '/to-do-app'
+        },
+        {
+            id: 'to-do-app-use-reducer',
+            value: 'To do app v2',
+            icon: <FaClipboardList />,
+            url: '/to-do-app-use-reducer'
+        },
+        {
+            id: 'user-table',
+            value: 'User list v1',
+            icon: <FaRegAddressBook />,
+            url: '/user-table'
+        },
+        {
+            id: 'react-table',
+            value: 'User list v2',
+            icon: <FaRegAddressBook />,
+            url: '/react-table'
+        },
+        // {
+        //     id: 'employee-table',
+        //     value: 'Employee Table',
+        //     icon: <FaTable />,
+        //     url: '/employee-table'
+        // },
+        // {
+        //    id: 'movies-list',
+        //     value: 'Movies List',
+        //     url: '/movies-list'
+        // },
+    ]
+
     const { todo } = useContext(TodoContext)
-    const [user] = useContext(ProfileUserContext)
     const [list, setlist] = useState([])
     const [isActive, setIsActive] = useState('profile')
     useEffect(() => {
-        setlist(json_data.ourMenu.list)
+        setlist(menuList)
     }, [])
     const onActiveHandel = (ID) => {
         setIsActive(ID)
-        console.log(ID)
     }
     return (
         <div className="rm-sliderbar">
             <div className="rm-profile">
-                <div className="profile-pic">
-                    <img src={user.image} alt="" />
+                <div className="rm-logo">
+                    <img src={logo} alt="logo" />
                 </div>
-                <h5>{user.name}</h5>
-                <h6>{user.profile} //{user.length}</h6>
-                <ul>
-                    <li><a href="#">Message</a></li>
-                    <li><a href="#" className="conn">Connect</a></li>
-                </ul>
             </div>
             <ul>
                 {

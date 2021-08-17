@@ -1,16 +1,16 @@
 import React, { useState, useRef } from 'react'
-import { json_data } from '../../data/json_data'
 import UserDataTable from './UserDataTable'
-import PaginationItem from '../list/PaginationItem'
-import { Breadcrumb, Col, Container, Row, Table } from 'react-bootstrap'
-import SearchIcon from '@material-ui/icons/Search'
+import PaginationItem from '../ResturantGridList/PaginationItem'
+import { Col, Container, Row, Table } from 'react-bootstrap'
+import userData from '../../data/userTableListData.json'
+import { FaSearch } from "react-icons/fa"
 
 const UserTable = () => {
-    let ourData = json_data.users
+    let ourData = userData
     const [table, setTable] = useState(ourData)
     const [curentPage, setCurentPage] = useState(1)
     const searchInpur = useRef(null)
-    const pageSize = 7
+    const pageSize = 5
     // useEffect(() => {
     //     setInterval(() => {
     //         setTable(ourData)
@@ -36,7 +36,6 @@ const UserTable = () => {
         })
         setTable(ourActualdat)
         setCurentPage(1)
-        console.log('User Table Data', ourActualdat)
     }
 
     return (
@@ -55,28 +54,28 @@ const UserTable = () => {
                                 style={{ width: 300 }}
                                 onChange={onSearchHandel}
                             />
-                            <SearchIcon />
+                            <FaSearch />
                         </div>
                     </Col>
                     <Col lg={12} md={12} sm={12} xs={12}>
                         <Table striped bordered hover size="sm">
                             <thead style={{ backgroundColor: '#c1c1c1' }}>
                                 <tr>
-                                    <th rowSpan="2">Sr</th>
+                                   
                                     <th rowSpan="2" style={{ width: 300 }}>Full Name</th>
                                     <th rowSpan="2" style={{ width: 100 }}>Gender</th>
-                                    <th rowSpan="2" style={{ width: 200 }}>DOB</th>
+                                    <th rowSpan="2" style={{ width: 100 }}>DOB</th>
                                     <th colSpan="4" style={{ width: 200, textAlign: 'center' }}>Address</th>
                                     <th colSpan="2" style={{ width: 160, textAlign: 'center' }}>Subscription </th>
-                                    <th rowSpan="2" style={{ textAlign: 'center',width: 100 }}>Action</th>
+                                    <th rowSpan="2" style={{ textAlign: 'center', width: 100 }}>Action</th>
                                 </tr>
                                 <tr>
-                                    <th style={{ width: 80 }}>City</th>
-                                    <th style={{ width: 100 }}>Street</th>
-                                    <th style={{ width: 100 }}>State</th>
-                                    <th style={{ width: 100 }}>Country</th>
-                                    <th style={{ textAlign: 'center',width: 100 }}>Plan</th>
-                                    <th style={{ textAlign: 'center',width: 100 }}>Status</th>
+                                    <th style={{ width: 110 }}>City</th>
+                                    <th style={{ width: 130 }}>Street</th>
+                                    <th style={{ width: 120 }}>State</th>
+                                    <th style={{ width: 140 }}>Country</th>
+                                    <th style={{ textAlign: 'center', width: 100 }}>Plan</th>
+                                    <th style={{ textAlign: 'center', width: 100 }}>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -90,14 +89,19 @@ const UserTable = () => {
                                 }
                             </tbody>
                         </Table>
-                        <div lg={12} md={12} sm={12} xs={12} style={{ display: 'flex', marginBottom: 35, justifyContent: 'flex-end' }}>
-                            <PaginationItem
-                                pageSize={pageSize}
-                                totalPost={table.length}
-                                paginate={paginate}
-                                data={table}
-                                curentPage={curentPage}
-                            />
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <div>
+                               Page <strong>{curentPage}</strong> - <strong>{Math.ceil(table.length / pageSize)}</strong> of <strong>{table.length}</strong> Result
+                            </div>
+                            <div lg={12} md={12} sm={12} xs={12} style={{ display: 'flex', marginBottom: 0, justifyContent: 'flex-end' }}>
+                                <PaginationItem
+                                    pageSize={pageSize}
+                                    totalPost={table.length}
+                                    paginate={paginate}
+                                    data={table}
+                                    curentPage={curentPage}
+                                />
+                            </div>
                         </div>
                     </Col>
                 </Row>

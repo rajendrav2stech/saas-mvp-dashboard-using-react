@@ -1,21 +1,21 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { Col, Button, Breadcrumb } from 'react-bootstrap'
-import { json_data } from '../../data/json_data'
+import React, { useState, useRef } from 'react'
+import { Col, } from 'react-bootstrap'
 import PaginationItem from './PaginationItem'
 import ResturantCard from './ResturantCard'
-import SearchIcon from '@material-ui/icons/Search'
+import restaurantData from '../../data/resturantData.json'
+import { FaSearch } from "react-icons/fa"
 
 const Resturant = () => {
-    let ourData = json_data.restaurant
+    let ourData = restaurantData
     const [serchItems, setSerchItems] = useState(ourData)
     const [curentPage, setCurentPage] = useState(1)
-    const pageSize = 5
+    const pageSize = 6
     const searchInpur = useRef(null)
 
     // GET CURENT PAGE
     const indexOfLastPage = curentPage * pageSize
     const indexOfFirstPage = indexOfLastPage - pageSize
-    const curentPosts = ourData.slice(indexOfFirstPage, indexOfLastPage)
+    // const curentPosts = ourData.slice(indexOfFirstPage, indexOfLastPage)
     const curentPageSurch = serchItems.slice(indexOfFirstPage, indexOfLastPage)
 
     // PAGINATE 
@@ -48,7 +48,7 @@ const Resturant = () => {
                                 style={{ width: 300 }}
                                 onChange={onSearchHandel}
                             />
-                            <SearchIcon />
+                            <FaSearch />
                         </div>
                     </Col>
                     {

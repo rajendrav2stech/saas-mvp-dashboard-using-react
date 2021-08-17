@@ -1,7 +1,7 @@
 import React from 'react'
-import { Modal, Button } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 
-const ModalPopup = ({ handelDelete, handleClose, show, delId, children, modalTitle, ModalCancelButtonValue,modalDeleteButtonValue }) => {
+const ModalPopup = ({ handelDelete, handleClose, show, delId, children, modalTitle, ModalCancelButtonValue, modalDeleteButtonValue }) => {
     return (
         <div>
             <Modal show={show} onHide={handleClose}>

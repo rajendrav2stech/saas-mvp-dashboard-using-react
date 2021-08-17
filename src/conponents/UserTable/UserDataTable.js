@@ -1,12 +1,11 @@
 import React from 'react'
 import { Badge } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import VisibilityIcon from '@material-ui/icons/Visibility'
+import { FaEye } from "react-icons/fa";
 
-const UserDataTable = ({ items, id, ourKeYID }) => {
+const UserDataTable = ({ items, id }) => {
     return (
-        <tr key={items.ourKeYID}>
-            <td>{ourKeYID}</td>
+        <tr key={items.id}>
             <td style={{ fontWeight: 700 }}><img src={items.avatar} alt="" /> {items.first_name} {items.last_name}</td>
             <td>{items.first_name}</td>
             <td>{items.gender}</td>
@@ -23,7 +22,7 @@ const UserDataTable = ({ items, id, ourKeYID }) => {
             </td>
             <td style={{ textAlign: 'center' }}>
                 <Link className="view_detils"
-                    to={`/user-table/${items.id}`} style={{ color: '#41179d' }}><VisibilityIcon /></Link>
+                    to={`/user-table/${items.id}`} style={{ color: '#41179d' }}><FaEye style={{ fontSize: 18 }} /></Link>
             </td>
         </tr >
     )

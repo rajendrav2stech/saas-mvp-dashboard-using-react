@@ -2,12 +2,9 @@ import React from 'react'
 import { Table } from 'react-bootstrap'
 import { useTable, useSortBy, usePagination, useGlobalFilter } from 'react-table'
 import GlobalFilter from './GlobalFilter'
-import FastForwardIcon from '@material-ui/icons/FastForward'
-import FastRewindIcon from '@material-ui/icons/FastRewind'
-import ArrowRightIcon from '@material-ui/icons/ArrowRight'
-import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
+import { FaSortDown, FaSortUp, FaSort, FaAngleDoubleLeft, FaAngleLeft, FaAngleRight, FaAngleDoubleRight, FaAngleDown } from "react-icons/fa"
 
-const ReactGlobalTable = ({ columns, data, className, defaultPageSize, showPagination, useSorting, showGlobalFilter }) => {
+const ReactGlobalTable = ({ columns, data, className, defaultPageSize, showPagination, useSorting, showGlobalFilter, editID }) => {
     let isPageSize = defaultPageSize > 0 ? defaultPageSize : data.length
     const {
         getTableProps,
@@ -46,7 +43,6 @@ const ReactGlobalTable = ({ columns, data, className, defaultPageSize, showPagin
             {
                 showGlobalFilter && <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
             }
-            {console.log("NUmber of Page", page)}
             <Table striped bordered hover {...getTableProps()}>
                 <thead style={{ backgroundColor: '#c1c1c1' }}>
                     {
@@ -57,7 +53,9 @@ const ReactGlobalTable = ({ columns, data, className, defaultPageSize, showPagin
                                         <th {...column.getHeaderProps(useSorting && column.getSortByToggleProps())}
                                             style={{ textAlign: column.textAlign, width: column.width, fontWeight: column.fontWeight }} >
                                             {column.render('Header')}
-                                            <span>{column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""}</span>
+                                            <span style={{ position: 'absolute', right: 4, top: 8, }}>
+                                                {column.isSorted ? (column.isSortedDesc ? (<FaSortDown />) : (<FaSortUp />)) : column.canSort ? (<FaSort style={{ opacity: 0.4 }} />) : ("")}
+                                            </span>
                                         </th>
                                     ))}
                             </tr>
@@ -68,7 +66,7 @@ const ReactGlobalTable = ({ columns, data, className, defaultPageSize, showPagin
                         page.map(row => {
                             prepareRow(row)
                             return (
-                                <tr {...row.getRowProps()}>
+                                <tr {...row.getRowProps()} className={row.original.id === editID ? 'trbgColor' : null}>
                                     {/*  className={row.original.id === editID ? 'trbgColor' : null} */}
                                     {
                                         row.cells.map(cell => {
@@ -90,29 +88,17 @@ const ReactGlobalTable = ({ columns, data, className, defaultPageSize, showPagin
             {/* PAGINATION :: SET */}
             {
                 showPagination &&
-                <ul ul className="pagination">
-                    <li className="page-item" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-                        <a className="page-link">{<FastRewindIcon />}</a>
-                    </li>
-                    <li className="page-item" onClick={() => previousPage()} disabled={!canPreviousPage}>
-                        <a className="page-link">{<ArrowLeftIcon />}</a>
-                    </li>
-                    <li className="page-item" onClick={() => nextPage()} disabled={!canNextPage}>
-                        <a className="page-link">{<ArrowRightIcon />}</a>
-                    </li>
-                    <li className="page-item" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-                        <a className="page-link">{<FastForwardIcon />}</a>
-                    </li>
-                    <li>
-                        <a className="page-link">
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div>
+                        <span>
                             Page{' '}
-                            <strong>
-                                {pageIndex + 1} - {pageOptions.length} of {rows.length}
-                            </strong>{' '}
-                        </a>
-                    </li>
-                    <li>
-                        <a className="page-link">
+                            <strong>{pageIndex + 1}</strong> - <strong>{pageOptions.length}</strong> of  <strong>{rows.length}</strong> Result
+                            {' '}
+                        </span>
+                    </div>
+                    <ul className="pagination m-0">
+                        <li style={{ display: 'flex', alignItems: 'center' }}>
+                            <span style={{ marginRight: 8 }}> Jump to page :</span>
                             <input
                                 className="form-control"
                                 type="number"
@@ -121,25 +107,42 @@ const ReactGlobalTable = ({ columns, data, className, defaultPageSize, showPagin
                                     const pages = e.target.value ? Number(e.target.value) - 1 : 0
                                     gotoPage(pages)
                                 }}
-                                style={{ width: '100px', height: '20px' }}
+                                style={{ width: '80px', height: '38px' }}
                             />
-                        </a>
-                    </li>{' '}
-                    <select
-                        className="form-control"
-                        value={pageSize}
-                        onChange={e => {
-                            setPageSize(Number(e.target.value))
-                        }}
-                        style={{ width: '120px', height: '38px' }}
-                    >
-                        {[5, 10, 20, 30, 40, 50].map(pageSizes => (
-                            <option key={pageSizes} value={pageSizes}>
-                                Show {pageSizes}
-                            </option>
-                        ))}
-                    </select>
-                </ul>
+                        </li>
+                        <li style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
+                            <span style={{ marginRight: 8 }}> Show :</span>
+                            <select
+                                className="form-control"
+                                value={pageSize}
+                                onChange={e => {
+                                    setPageSize(Number(e.target.value))
+                                }}
+                                style={{ width: '80px', height: '38px' }}
+                            >
+                                {[5, 10, 20, 30, 40, 50].map(pageSizes => (
+                                    <option key={pageSizes} value={pageSizes}>
+                                        {pageSizes}
+                                    </option>
+                                ))}
+                            </select>
+                            <FaAngleDown style={{ position: 'absolute', right: 10, opacity: .4 }} />
+                        </li>
+
+                        <li className="page-item" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+                            <a className="page-link">{<FaAngleDoubleLeft />}</a>
+                        </li>
+                        <li className="page-item" onClick={() => previousPage()} disabled={!canPreviousPage}>
+                            <a className="page-link">{<FaAngleLeft />}</a>
+                        </li>
+                        <li className="page-item" onClick={() => nextPage()} disabled={!canNextPage}>
+                            <a className="page-link">{<FaAngleRight />}</a>
+                        </li>
+                        <li className="page-item" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+                            <a className="page-link">{<FaAngleDoubleRight />}</a>
+                        </li>
+                    </ul>
+                </div>
             }
             {/* PAGINATION :: END */}
         </div >

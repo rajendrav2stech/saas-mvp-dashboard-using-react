@@ -1,15 +1,15 @@
 import React from 'react'
-import { Table, Button } from 'react-bootstrap'
-import ModalPopup from '../globalModalPopup/ModalPopup'
+import { Table, Button, Badge } from 'react-bootstrap'
+import ModalPopup from '../common/GlobalModalPopup/ModalPopup'
+import { FaEdit, FaTrash } from "react-icons/fa";
 
 const ToDoTable = ({ updateToDo, handelEdit, handelDelete, editID, handleClose, show, passData, delId, delTitle }) => {
-   
+
     return (
         <div>
             <Table striped bordered hover size="sm" className="rm-to-table">
                 <thead style={{ backgroundColor: '#c1c1c1' }}>
                     <tr>
-                        <th style={{ width: 45 }}>Sr</th>
                         <th style={{ width: 220 }}>Title</th>
                         <th>Description</th>
                         <th style={{ textAlign: 'center', width: 120 }}>Status</th>
@@ -21,17 +21,16 @@ const ToDoTable = ({ updateToDo, handelEdit, handelDelete, editID, handleClose, 
                         updateToDo.length > 0 ? updateToDo.map((items, i) => {
                             return (
                                 <tr key={i} className={items.id === editID ? 'trbgColor' : null}>
-                                    <td>{i + 1}</td>
                                     <td>{items.title}</td>
                                     <td>{items.description}</td>
                                     <td>
-                                        {items.status === "todo" ? <span style={{ color: 'blue' }}>Todo</span> : null}
-                                        {items.status === "inProgress" ? <span style={{ color: 'orange' }} > Inprogress</span> : null}
-                                        {items.status === "complete" ? <span style={{ color: 'green' }} > Complete</span> : null}
+                                        {items.status === "todo" ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="primary">Todo</Badge> </div> : null}
+                                        {items.status === "inProgress" ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark" text="dark">In Progress</Badge></div> : null}
+                                        {items.status === "complete" ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="success" text="white">Complete</Badge></div> : null}
                                     </td>
                                     <td style={{ textAlign: 'center' }}>
-                                        <button className="btn btn-warning" onClick={(e) => { handelEdit(items.id) }}>Edit</button>
-                                        <button className="btn btn-danger" style={{ marginLeft: 4 }} onClick={(e) => { passData(items.id, items.title) }}>Delete</button>
+                                        <FaEdit onClick={(e) => { handelEdit(items.id) }} className="edit_icon" />
+                                        <FaTrash onClick={(e) => { passData(items.id, items.title) }} className="delete_icon" />
                                     </td>
                                 </tr>
                             )

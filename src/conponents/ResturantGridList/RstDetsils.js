@@ -1,11 +1,7 @@
 import React from 'react'
-import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace'
-import LocationOnIcon from '@material-ui/icons/LocationOn'
-import FastfoodIcon from '@material-ui/icons/Fastfood'
-import PhoneIcon from '@material-ui/icons/Phone'
-import AccessTimeIcon from '@material-ui/icons/AccessTime'
 import { Col, Container, Row, Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { FaArrowLeft, FaPhoneAlt, FaMapMarkerAlt, FaRegClock, FaWineGlassAlt } from "react-icons/fa"
 
 const RstDetsils = ({ rsData, isclosed }) => {
     return (
@@ -15,7 +11,7 @@ const RstDetsils = ({ rsData, isclosed }) => {
                     <Row>
                         <Col lg={12} md={12} sm={12} xs={12}>
                             <div className="backt_restorant">
-                                <Link to={'/list/'}><KeyboardBackspaceIcon /> Back to Resturant</Link>
+                                <Link to={'/list/'}><FaArrowLeft /> Back to Resturant</Link>
                             </div>
                         </Col>
                         <Col lg={12} md={12} sm={12} xs={12} className="res_pic">
@@ -25,14 +21,14 @@ const RstDetsils = ({ rsData, isclosed }) => {
                         </Col>
                         <Col lg={12} md={12} sm={12} xs={12} className="res_con">
                             <div className="contenr">
-                                <h1 className="d-flex justify-content-between">{rsData.name}  <p style={{ fontSize: 18 }}><FastfoodIcon style={{ marginTop: "-3px" }} /> {rsData.type}</p></h1>
+                                <h1 className="d-flex justify-content-between">{rsData.name}  <p style={{ fontSize: 18 }}><FaWineGlassAlt style={{ marginTop: "-3px" }} /> {rsData.type}</p></h1>
                                 <h6>{rsData.description}</h6>
                                 <p><strong>Review :</strong> {rsData.review}</p>
                                 <div>
-                                    <p><PhoneIcon /> {rsData.phone_number}</p>
-                                    <p><LocationOnIcon /> {rsData.address}</p>
+                                    <p><FaPhoneAlt /> {rsData.phone_number}</p>
+                                    <p><FaMapMarkerAlt /> {rsData.address}</p>
                                 </div>
-                                <p><strong><AccessTimeIcon /> Hours: Open</strong></p>
+                                <p><strong><FaRegClock /> Hours: Open</strong></p>
                                 <Table striped bordered hover>
                                     <tbody>
                                         <tr>

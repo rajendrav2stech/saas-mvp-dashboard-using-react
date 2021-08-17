@@ -5,8 +5,8 @@ import { TodoContext } from './TodoContext'
 import ToDoTables from './ToDoTables'
 
 const TodoAppUseReducer = () => {
-    const [updateButton, setUpdateButton] = useState(true)
-    const [editID, setSetEditID] = useState(null)
+    const [updateButton] = useState(true)
+    const [editID] = useState(null)
     const [delId, setId] = useState("")
     const [delTitle, setDelTitle] = useState("")
     const [show, setShow] = useState(false)
@@ -20,7 +20,6 @@ const TodoAppUseReducer = () => {
         status: '',
     })
     const { todo, addToDo, deleteToDo } = useContext(TodoContext)
-    console.log(todo)
     // HANDEl ONCHANGE
     const onChangeHandel = (event) => {
         event.preventDefault()
@@ -70,7 +69,7 @@ const TodoAppUseReducer = () => {
     }
     // EDIT HANDEL
     const handelEdit = () => {
-        console.log('edir')
+        console.log('EDIT')
     }
 
     return (

@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row, Tabs, Tab, Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { json_data } from '../../data/json_data'
-import AssignmentIndIcon from '@material-ui/icons/AssignmentInd'
-import PhoneInTalkIcon from '@material-ui/icons/PhoneInTalk'
-import DateRangeIcon from '@material-ui/icons/DateRange'
-import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace'
-import ForumIcon from '@material-ui/icons/Forum'
-import CakeIcon from '@material-ui/icons/Cake'
-import WcIcon from '@material-ui/icons/Wc'
-import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid'
-import EmailIcon from '@material-ui/icons/Email'
-import LocationOnIcon from '@material-ui/icons/LocationOn'
+import users from '../../data/userTableListData.json'
+import { FaArrowLeft, FaIdCard, FaPhoneAlt, FaBirthdayCake, FaTransgender, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
 
 const UserDetils = ({ match, location }) => {
-    let ourData = json_data.users
+    let ourData = users
     const [items, setItems] = useState({
         employment: {},
         address: {},
@@ -23,23 +14,24 @@ const UserDetils = ({ match, location }) => {
 
     useEffect(() => {
         let OurSetData = ourData.find((item) => {
-            // console.log("IDDDDD", match.params.id)
             let ourRowID = parseInt(match.params.id)
             return item.id === ourRowID
         })
         setItems(OurSetData)
     }, [])
 
-    console.log("PATHNAe", location.pathname)
-    console.log("MY ITREMS", location.myItems)
-
-    // console.log('Tables', items)
-    // console.log("MAtch", match)
-
     return (
         <div className="rm-body user_detils">
-            <Container fluid>
+            <Container fluid style={{ padding: '0 30px', }}>
+                <Row>
+                    <Col lg={12} md={12} sm={12} xs={12} className="backt_restorant m-0 p-0">
+                        <Link to="/user-table"> <FaArrowLeft /> Back to User</Link>
+                    </Col>
+                </Row>
+            </Container>
+            <Container fluid style={{ padding: '0 30px' }}>
                 <Row className="user_profile_row">
+
                     <Col lg={4} md={4}>
                         <div className="rm-detils-profile">
                             <div className="profile_pic">
@@ -48,7 +40,7 @@ const UserDetils = ({ match, location }) => {
                             <div className="user_name">
                                 <h4>{items.first_name || "First Name"} {items.last_name || "Last Name"}</h4>
                                 <ul>
-                                    <li><AssignmentIndIcon /> Employee ID: <strong>{items.id || "Employee ID"}</strong></li>
+                                    <li><FaIdCard /> Employee ID: <strong>{items.id || "Employee ID"}</strong></li>
                                 </ul>
                             </div>
                         </div>
@@ -57,19 +49,14 @@ const UserDetils = ({ match, location }) => {
                         <div className="rm-detils-profile">
                             <div className="user_name">
                                 <ul>
-                                    <li><PhoneInTalkIcon /> Phone Number: <strong>{items.phone_number}</strong></li>
-                                    <li><DateRangeIcon /> Date of Birth: <strong>{items.date_of_birth}</strong></li>
+                                    <li><FaPhoneAlt /> Phone Number: <strong>{items.phone_number}</strong></li>
+                                    <li><FaBirthdayCake /> Date of Birth: <strong>{items.date_of_birth}</strong></li>
                                 </ul>
                             </div>
                         </div>
                     </Col>
                     <Col lg={4} md={4}>
-                        <div className="back_to_user">
-                            <ul className="d-flex">
-                                <li><Link to="/user-table"> <KeyboardBackspaceIcon /> Back to User</Link></li>
-                                <li><Link to="/"> <ForumIcon /> User Profile</Link></li>
-                            </ul>
-                        </div>
+
                     </Col>
                 </Row>
                 <Tabs defaultActiveKey="about" id="uncontrolled-tab-example" className="mb-3 rm_use_detils_tab">
@@ -80,27 +67,27 @@ const UserDetils = ({ match, location }) => {
                                     <h5>Personal Information</h5>
                                     <ul>
                                         <li>
-                                            <CakeIcon />
+                                            <FaBirthdayCake />
                                             <h6>Date of Birth</h6>
                                             <strong>{items.date_of_birth}</strong>
                                         </li>
                                         <li>
-                                            <WcIcon />
+                                            <FaTransgender />
                                             <h6>Gender</h6>
                                             <strong>{items.gender}</strong>
                                         </li>
                                         <li>
-                                            <PhoneAndroidIcon />
+                                            <FaPhoneAlt />
                                             <h6>Phone Number</h6>
                                             <strong>{items.phone_number}</strong>
                                         </li>
                                         <li>
-                                            <EmailIcon />
+                                            <FaEnvelope />
                                             <h6>Email Id</h6>
                                             <strong>{items.email}</strong>
                                         </li>
                                         <li>
-                                            <LocationOnIcon />
+                                            <FaMapMarkerAlt />
                                             <h6>Communication Location</h6>
                                             <strong>{items.address.city},
                                                 {items.address.street_name},
@@ -115,7 +102,7 @@ const UserDetils = ({ match, location }) => {
                             </Col>
                             <Col lg={8} md={8} sm={8} className="right col-md-4">
                                 <div className="personal_detils">
-                                    <Table>
+                                    <Table style={{ boxShadow: 'none' }}>
                                         <thead>
                                             <tr>
                                                 <th style={{ border: 0, padding: 0, verticalAlign: 'middle' }}><span style={{ fontSize: '1.25rem', display: 'block', fontWeight: 500 }}>Usage Subscription</span></th>
@@ -144,13 +131,13 @@ const UserDetils = ({ match, location }) => {
 
                     </Tab>
                     <Tab eventKey="application" title="Application">
-                        B
+                        No Data !
                     </Tab>
                     <Tab eventKey="teams" title="Teams">
-                        C
+                        No Data !
                     </Tab>
                     <Tab eventKey="connection" title="Connection">
-                        D
+                        No Data !
                     </Tab>
                 </Tabs>
             </Container>
