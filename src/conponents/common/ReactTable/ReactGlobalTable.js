@@ -131,16 +131,16 @@ const ReactGlobalTable = ({ columns, data, className, defaultPageSize, showPagin
                         </li>
 
                         <li className="page-item" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-                            <a className="page-link">{<FaAngleDoubleLeft />}</a>
+                            <span className="page-link">{<FaAngleDoubleLeft />}</span>
                         </li>
                         <li className="page-item" onClick={() => previousPage()} disabled={!canPreviousPage}>
-                            <a className="page-link">{<FaAngleLeft />}</a>
+                            <span className="page-link">{<FaAngleLeft />}</span>
                         </li>
                         <li className="page-item" onClick={() => nextPage()} disabled={!canNextPage}>
-                            <a className="page-link">{<FaAngleRight />}</a>
+                            <span className="page-link">{<FaAngleRight />}</span>
                         </li>
                         <li className="page-item" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-                            <a className="page-link">{<FaAngleDoubleRight />}</a>
+                            <span className="page-link">{<FaAngleDoubleRight />}</span>
                         </li>
                     </ul>
                 </div>

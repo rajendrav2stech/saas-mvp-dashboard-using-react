@@ -17,9 +17,9 @@ const UserDataTable = ({ items }) => {
             <td style={{ textAlign: 'center' }}>{items.subscription.plan}</td>
             <td style={{ textAlign: 'center' }}>
                 {(items.subscription.status === "Idle") ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="primary">Idle</Badge></div> : null}
-                {(items.subscription.status === "Blocked") ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark" text="dark">Pending</Badge></div> : null}
+                {(items.subscription.status === "Blocked") ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark">Pending</Badge></div> : null}
                 {(items.subscription.status === "Active") ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="danger" >Blocked</Badge></div> : null}
-                {(items.subscription.status === "Pending") ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="success" text="white">Active</Badge></div> : null}
+                {(items.subscription.status === "Pending") ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="white">Active</Badge></div> : null}
             </td>
             <td style={{ textAlign: 'center' }}>
                 <Link className="view_detils"
@@ -34,14 +34,14 @@ UserDataTable.propTypes = {
         last_name: PropTypes.string,
         gender: PropTypes.string,
         address: PropTypes.shape({
-            city:  PropTypes.string,
+            city: PropTypes.string,
             street_name: PropTypes.string,
             state: PropTypes.string,
             country: PropTypes.string,
         }),
         subscription: PropTypes.shape({
             plan: PropTypes.any,
-            status: PropTypes.any,
+            status: PropTypes.oneOf(["Idle", "Blocked", "Active", "Pending",]),
         })
     })
 }

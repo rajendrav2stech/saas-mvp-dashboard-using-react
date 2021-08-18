@@ -68,7 +68,7 @@ const ToDoAppForm = ({ onChangeHandel, status, description, title, submitHandel,
 }
 ToDoAppForm.propTypes = {
     onChangeHandel: PropTypes.func,
-    status: PropTypes.string,
+    status: PropTypes.oneOf(["", "todo", "inProgress", "complete"]),
     description: PropTypes.string,
     title: PropTypes.string,
     validated: PropTypes.bool,

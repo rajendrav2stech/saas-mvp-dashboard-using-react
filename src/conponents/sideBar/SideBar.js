@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext, useRef } from 'react'
 import { Link } from "react-router-dom";
 import { TodoContext } from '../ToDoAppV2/TodoContext'
 import logo from '../../assets/image/logo.png'
@@ -59,9 +59,17 @@ const SideBar = () => {
     const { todo } = useContext(TodoContext)
     const [list, setlist] = useState([])
     const [isActive, setIsActive] = useState('profile')
-    useEffect(() => {
+    let sideMenu = useRef()
+    const sideBar = () => {
+        let data = menuList
+        setlist(data)
         setlist(menuList)
+    }
+    sideMenu.current = sideBar
+    useEffect(() => {
+        sideMenu.current()
     }, [])
+
     const onActiveHandel = (ID) => {
         setIsActive(ID)
     }

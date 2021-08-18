@@ -31,9 +31,9 @@ const Todo = () => {
                     case "todo":
                         return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="primary">Todo</Badge> </div>
                     case "inProgress":
-                        return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark" text="dark">In Progress</Badge></div>
+                        return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark">In Progress</Badge></div>
                     case "complete":
-                        return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="success" text="white">Complete</Badge></div>
+                        return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="white">Complete</Badge></div>
                     default:
                         return <></>;
                 }

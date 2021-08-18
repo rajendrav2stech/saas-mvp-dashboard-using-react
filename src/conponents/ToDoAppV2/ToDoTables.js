@@ -28,8 +28,8 @@ const ToDoTables = ({ todo, updateToDo, handelEdit, handelDelete, editID, handle
                                     <td>{items.description}</td>
                                     <td>
                                         {items.status === "todo" ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="primary">Todo</Badge> </div> : null}
-                                        {items.status === "inProgress" ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark" text="dark">In Progress</Badge></div> : null}
-                                        {items.status === "complete" ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="success" text="white">Complete</Badge></div> : null}
+                                        {items.status === "inProgress" ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark">In Progress</Badge></div> : null}
+                                        {items.status === "complete" ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="white">Complete</Badge></div> : null}
                                     </td>
                                     <td style={{ textAlign: 'center' }}>
                                         <FaEdit onClick={(e) => { handelEdit(items.id) }} className="edit_icon" />

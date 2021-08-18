@@ -60,7 +60,7 @@ const Profile = () => {
                             </Card>
                         </Col>
                         <Col lg={3} md={4} sm={3} xs={12}>
-                            <Card className="card_pad_ media" sty>
+                            <Card className="card_pad_ media">
                                 <h5>Media</h5>
                                 <ul>
                                     {

@@ -12,8 +12,8 @@ const PaginationItem = ({ pageSize, totalPost, curentPage, paginate }) => {
             {
                 pageNumbaer.map((items, index) => {
                     return (
-                        <div>
-                            <li key={index + 1} className={curentPage === index + 1 ? 'page-item active' : 'page-item'}>
+                        <div key={index}>
+                            <li className={curentPage === index + 1 ? 'page-item active' : 'page-item'}>
                                 <button onClick={() => paginate(items)} className="page-link">{items}</button>
                             </li>
                         </div>

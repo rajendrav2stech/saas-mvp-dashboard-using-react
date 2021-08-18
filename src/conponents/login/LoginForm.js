@@ -6,6 +6,8 @@ import adminUser from '../../data/userData.json'
 import logo from '../../../src/assets/image/logo.png'
 import PropTypes from 'prop-types'
 
+
+
 const LoginForm = ({ onLoginSuccess }) => {
     let history = useHistory()
     const [validated, setValidated] = useState(false)
@@ -13,8 +15,7 @@ const LoginForm = ({ onLoginSuccess }) => {
         userName: '',
         password: '',
     })
-
-    // HANDLE - ONCHANGE
+ 
     const onchangeHaldel = (e) => {
         const target = e.target
         const name = target.name
@@ -25,7 +26,6 @@ const LoginForm = ({ onLoginSuccess }) => {
         })
     }
 
-    // ERROR - LOGIN IS NOT MATCH 
     const [err, setErr] = useState({ msg: "", })
 
     // HANDLE - SUBMIT PASS - DATA

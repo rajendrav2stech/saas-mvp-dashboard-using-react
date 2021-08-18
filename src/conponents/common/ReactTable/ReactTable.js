@@ -36,7 +36,7 @@ export default ReactTable
 export const usersHead = [
     {
         Header: "Full Name",
-        accessor: `first_name last_name`,
+        accessor: `first_name`,
         defaultCanSort: true,
         Cell: ({ row }) => {
             return (
@@ -139,13 +139,13 @@ export const usersHead = [
                             return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="primary">Idle</Badge></div>
                         }
                         case 'Pending': {
-                            return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark" text="dark">Pending</Badge></div>
+                            return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark">Pending</Badge></div>
                         }
                         case 'Blocked': {
                             return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="danger" >Blocked</Badge></div>
                         }
                         case 'Active': {
-                            return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="success" text="white">Active</Badge></div>
+                            return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="white">Active</Badge></div>
                         }
                         default:
                             return <></>

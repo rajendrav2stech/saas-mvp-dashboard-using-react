@@ -20,7 +20,7 @@ const UserDetils = ({ match }) => {
             return item.id === ourRowID
         })
         setItems(OurSetData)
-    }, [])
+    }, [ourData, match])
 
     const goBack = () => {
         history.goBack()
