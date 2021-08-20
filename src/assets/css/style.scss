@@ -212,7 +212,7 @@ p {
                         position: absolute;
                         background-color: #f94848;
                         color: #ffffff;
-                        font-size: 9px;
+                        font-size: 11px;
                         padding: 0px 5px;
                         border-radius: 30px;
                         right: 6px;
@@ -1129,5 +1129,67 @@ table {
     .row {
         margin-left: -20px;
         margin-right: -20px;
+    }
+}
+
+.notification {
+    position: absolute;
+    right: 310px;
+    top: 60px;
+    z-index: 99;
+    opacity: 9;
+    background-color: #ffffff;
+    border: 0;
+    .toast-header {
+        background-color: #41179d;
+        position: relative;
+        padding: 10px 20px;
+        strong {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        h6 {
+            color: #bfbfbf;
+            font-size: 14px;
+        }
+        .btn-close {
+            position: absolute;
+            right: 15px;
+            color: #ffffff;
+            top: 10px;
+        }
+    }
+    .toast-body {
+        position: relative;
+        ul {
+            padding: 0;
+            list-style: none;
+            li {
+                padding: 10px 5px;
+                position: relative;
+                strong {
+                    display: block;
+                    font-size: 14px;
+                    color: #6f6f6f;
+                    font-weight: 700;
+                }
+                span {
+                    display: block;
+                    color: #929292;
+                    font-weight: 400;
+                }
+                svg {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 30px;
+                }
+            }
+            div {
+                padding-left: 40px;
+            }
+        }
     }
 }

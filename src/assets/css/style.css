@@ -252,7 +252,7 @@ p {
   position: absolute;
   background-color: #f94848;
   color: #ffffff;
-  font-size: 9px;
+  font-size: 11px;
   padding: 0px 5px;
   border-radius: 30px;
   right: 6px;
@@ -1275,5 +1275,79 @@ table {
 #uncontrolled-tab-example-tabpane-about .row {
   margin-left: -20px;
   margin-right: -20px;
+}
+
+.notification {
+  position: absolute;
+  right: 310px;
+  top: 60px;
+  z-index: 99;
+  opacity: 9;
+  background-color: #ffffff;
+  border: 0;
+}
+
+.notification .toast-header {
+  background-color: #41179d;
+  position: relative;
+  padding: 10px 20px;
+}
+
+.notification .toast-header strong {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.notification .toast-header h6 {
+  color: #bfbfbf;
+  font-size: 14px;
+}
+
+.notification .toast-header .btn-close {
+  position: absolute;
+  right: 15px;
+  color: #ffffff;
+  top: 10px;
+}
+
+.notification .toast-body {
+  position: relative;
+}
+
+.notification .toast-body ul {
+  padding: 0;
+  list-style: none;
+}
+
+.notification .toast-body ul li {
+  padding: 10px 5px;
+  position: relative;
+}
+
+.notification .toast-body ul li strong {
+  display: block;
+  font-size: 14px;
+  color: #6f6f6f;
+  font-weight: 700;
+}
+
+.notification .toast-body ul li span {
+  display: block;
+  color: #929292;
+  font-weight: 400;
+}
+
+.notification .toast-body ul li svg {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 30px;
+}
+
+.notification .toast-body ul div {
+  padding-left: 40px;
 }
 /*# sourceMappingURL=style.css.map */
