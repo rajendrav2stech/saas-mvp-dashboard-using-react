@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { DropdownButton, Toast } from 'react-bootstrap'
+import { DropdownButton } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FaBell } from "react-icons/fa"
 import PropTypes from 'prop-types'
-import UserMessages from './UserMessages'
+import Notification from './Notification'
 
 /**
  * Component for showing Header
@@ -46,7 +46,7 @@ const Nav = ({ Logout }) => {
                 </header>
             </div>
 
-            <UserMessages
+            <Notification
                 show={show}
                 setShow={setShow}
             />
