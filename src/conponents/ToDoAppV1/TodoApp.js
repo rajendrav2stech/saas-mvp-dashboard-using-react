@@ -2,6 +2,13 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import Todo from './Todo'
 
+/**
+ * This Component is return Todo component
+ * @private
+ * @returns (
+ *      <Todo>
+ * )
+ */
 const TodoApp = () => {
     return (
         <div className="rm-body">

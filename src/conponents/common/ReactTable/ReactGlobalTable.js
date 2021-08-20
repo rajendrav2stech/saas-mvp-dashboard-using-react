@@ -5,6 +5,19 @@ import GlobalFilter from './GlobalFilter'
 import { FaSortDown, FaSortUp, FaSort, FaAngleDoubleLeft, FaAngleLeft, FaAngleRight, FaAngleDoubleRight, FaAngleDown } from "react-icons/fa"
 import PropTypes from 'prop-types'
 
+/**
+ * Component for showing it's built to materialize, filter, sort, group, aggregate, 
+ * paginate and display massive data sets using a very small API surface.
+ * @param {Array} columns - Column Options — useTable is the root hook for React Table. To use it, pass it with an options object with at least a columns and data value
+ * @param {Array} data - data should have a unique identifier By default, React Data Table looks for an id property on each item in your data
+ * @param {string} className - className - To specify a CSS class, use the className attribute. This applies to all regular DOM .
+ * @param {number} defaultPageSize - the matching page/component will be rendered into the HTML DOM.
+ * @param {boolean} showPagination -  decide to show pagination on basis of data rows length showPaginationBottom={data.length > 10 ? true: false}
+ * @param {boolean} useSorting - useSortBy. Plugin Hook; Optional. useSortBy is the hook that implements row sorting. It also supports multi-sort (keyboard required)
+ * @param {boolean} showGlobalFilter - Global filter input that can be used with setFilter function ... Dynamically show/hide columns based on user selection with respect to react-table
+ * @param {string} editID - The actions will touch upon the CRUD (ID) application 
+ * @returns Table Componets
+ */
 const ReactGlobalTable = ({ columns, data, className, defaultPageSize, showPagination, useSorting, showGlobalFilter, editID }) => {
     let isPageSize = defaultPageSize > 0 ? defaultPageSize : data.length
     const {
@@ -38,7 +51,6 @@ const ReactGlobalTable = ({ columns, data, className, defaultPageSize, showPagin
         useSortBy,
         usePagination,
     )
-
     return (
         <div className={className}>
             {
@@ -150,13 +162,37 @@ const ReactGlobalTable = ({ columns, data, className, defaultPageSize, showPagin
     )
 }
 ReactGlobalTable.propTypes = {
+    /**
+     * - Column Options — useTable is the root hook for React Table. To use it, pass it with an options object with at least a columns and data value
+     */
     columns: PropTypes.array,
+    /**
+     * - data should have a unique identifier By default, React Data Table looks for an id property on each item in your data
+     */
     data: PropTypes.array,
+    /**
+     * className - To specify a CSS class, use the className attribute. This applies to all regular DOM .
+     */
     className: PropTypes.string,
+    /**
+     * The matching page/component will be rendered into the HTML DOM
+     */
     defaultPageSize: PropTypes.number,
+    /**
+     *  decide to show pagination on basis of data rows length showPaginationBottom={data.length > 10 ? true: false}
+     */
     showPagination: PropTypes.bool,
+    /**
+     * useSortBy. Plugin Hook; Optional. useSortBy is the hook that implements row sorting. It also supports multi-sort (keyboard required)
+     */
     useSorting: PropTypes.bool,
+    /**
+     * Global filter input that can be used with setFilter function ... Dynamically show/hide columns based on user selection with respect to react-table
+     */
     showGlobalFilter: PropTypes.bool,
-    editID:  PropTypes.string,
+    /**
+     * The actions will touch upon the CRUD (ID) application 
+     */
+    editID: PropTypes.string,
 }
 export default ReactGlobalTable

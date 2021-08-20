@@ -4,6 +4,17 @@ import { Link } from 'react-router-dom'
 import { FaBell, FaTelegramPlane } from "react-icons/fa"
 import PropTypes from 'prop-types'
 
+/**
+ * Component for showing Header
+ * @param {Function} Logout -  Redirect them back to the login page after they logout
+ * @returns (
+ *  <header>
+ *    Notification
+ *    profile
+ *    logout 
+ *  </header>
+ * )
+ */
 const Nav = ({ Logout }) => {
     return (
         <div className="rm-headder">

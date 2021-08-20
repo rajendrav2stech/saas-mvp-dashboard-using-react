@@ -10,7 +10,7 @@ const ResturantDetails = () => {
     })
     const [isclosed] = useState(false)
     let data = useLocation()
-    let rSData = data.state
+    let restaurantData = data.state
     const [loading, setLoading] = useState(true)
     const [rsData, setrsData] = useState({
         hours: {
@@ -23,12 +23,13 @@ const ResturantDetails = () => {
             sunday: {}
         },
     })
+    // Set loading and set data with time out
     useEffect(() => {
         setTimeout(() => {
-            setrsData(rSData)
+            setrsData(restaurantData)
             setLoading(false)
         }, 2000)
-    }, [rSData])
+    }, [restaurantData])
     return (
         <div className="rm-body">
             {

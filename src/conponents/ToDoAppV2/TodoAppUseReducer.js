@@ -1,8 +1,15 @@
 import React, { useContext, useState } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import ToDoAppForm from './ToDoAppForm'
+import { Col, Container, Form, Row } from 'react-bootstrap'
 import { TodoContext } from './TodoContext'
 import ToDoTables from './ToDoTables'
+
+/**
+ * 
+ * @returns {Component} (
+ *  <ToDoAppForm /> - Todo form
+ *  <ToDoTables />  - Todo Table
+ * )
+ */
 
 const TodoAppUseReducer = () => {
     const [updateButton] = useState(true)
@@ -77,16 +84,66 @@ const TodoAppUseReducer = () => {
             <Container fluid>
                 <Row>
                     <Col lg={12} sm={12} xs={12}>
-                        <ToDoAppForm
-                            onChangeHandel={onChangeHandel}
-                            title={toDoForm.title}
-                            description={toDoForm.description}
-                            status={toDoForm.status}
-                            submitHandel={submitHandel}
-                            validated={validated}
-                            updateButton={updateButton}
-                        />
-                        {/* {JSON.stringify(toDoForm)} */}
+                        <div className="rm-todo-form">
+                            <Form noValidate validated={validated} onSubmit={submitHandel}>
+                                <div>
+                                    <h4 className="rm_global_heading">To Do App <sub style={{ fontSize: 14 }}>Use Reducer / Use Context</sub></h4>
+                                </div>
+                                <Form.Group>
+                                    <Form.Label>Title</Form.Label>
+                                    <Form.Control
+                                        className="form-control"
+                                        type="text"
+                                        placeholder="Enter Title"
+                                        name="title"
+                                        value={toDoForm.title}
+                                        onChange={onChangeHandel}
+                                        required
+                                    />
+                                    <Form.Control.Feedback type="invalid">Please provide a valid Title.</Form.Control.Feedback>
+                                </Form.Group>
+                                <Form.Group>
+                                    <Form.Label>Description</Form.Label>
+                                    <Form.Control
+                                        as="textarea"
+                                        rows={3}
+                                        className="form-control"
+                                        type="description"
+                                        placeholder="Enter Title"
+                                        name="description"
+                                        value={toDoForm.description}
+                                        onChange={onChangeHandel}
+                                        required
+                                    />
+                                    <Form.Control.Feedback type="invalid">Please provide a valid Description.</Form.Control.Feedback>
+                                </Form.Group>
+                                <Form.Group>
+                                    <Form.Label>Status</Form.Label>
+                                    <Form.Control
+                                        required
+                                        as="select"
+                                        name="status"
+                                        value={toDoForm.status}
+                                        onChange={onChangeHandel}
+                                    >
+                                        <option value="">Select Status</option>
+                                        <option value="todo">Todo</option>
+                                        <option value="inProgress">In Progress</option>
+                                        <option value="complete">Complete</option>
+                                    </Form.Control>
+                                    <Form.Control.Feedback type="invalid">Please select your valid Status.</Form.Control.Feedback>
+                                </Form.Group>
+                                <br />
+                                {
+                                    updateButton ?
+                                        <button type="submit" className="btn btn-primary submit">Submit</button> :
+                                        <>
+                                            <button type="submit" className="btn btn-success">Update</button>
+                                            <button type="button" className="btn btn-danger" style={{ marginLeft: 8 }} >Cancel</button>
+                                        </>
+                                }
+                            </Form >
+                        </div>
                         <br />
                         <ToDoTables
                             todo={todo}

@@ -4,6 +4,14 @@ import { Link } from 'react-router-dom'
 import { FaArrowLeft, FaPhoneAlt, FaMapMarkerAlt, FaRegClock, FaWineGlassAlt } from "react-icons/fa"
 import PropTypes from 'prop-types'
 
+/**
+ * Component for showing details of Resturant.
+ * @param {object} rsData - it should return an object of Resturant .
+ * @param {boolean} isclosed - Is closed variable return Open And close of the Restaurant
+ * @returns (
+ *  <Table />
+ * )
+ */
 const RstDetsils = ({ rsData, isclosed }) => {
     return (
         <div>
@@ -101,12 +109,19 @@ const RstDetsils = ({ rsData, isclosed }) => {
 
 RstDetsils.propTypes = {
     rsData: PropTypes.shape({
+        // - Logo of the Resturant 
         logo: PropTypes.string,
+        // - Name of the Resturant
         name: PropTypes.string,
+        // - Type of the Resturant
         type: PropTypes.string,
+        // - Description of the Resturant
         description: PropTypes.string,
+        // - Review of the Resturant
         review: PropTypes.string,
+        // - Phone Number of the Resturant
         phone_number: PropTypes.string,
+        // - Address of the Resturant
         address: PropTypes.string,
         hours: PropTypes.shape({
             sunday: PropTypes.shape({

@@ -4,7 +4,9 @@ import { Link, useHistory } from 'react-router-dom'
 import users from '../../data/userTableListData.json'
 import { FaArrowLeft, FaIdCard, FaPhoneAlt, FaBirthdayCake, FaTransgender, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
 
-
+/**
+ * Component for showing details of the user
+ */
 const UserDetils = ({ match }) => {
     let history = useHistory()
     let ourData = users
@@ -13,7 +15,7 @@ const UserDetils = ({ match }) => {
         address: {},
         subscription: {}
     })
-
+    // SET ITEM 
     useEffect(() => {
         let OurSetData = ourData.find((item) => {
             let ourRowID = parseInt(match.params.id)
@@ -22,6 +24,7 @@ const UserDetils = ({ match }) => {
         setItems(OurSetData)
     }, [ourData, match])
 
+    // HANDEL GO BACK
     const goBack = () => {
         history.goBack()
     }

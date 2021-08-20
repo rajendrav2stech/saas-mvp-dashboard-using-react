@@ -20,7 +20,7 @@ import LoginForm from '../conponents/Login/LoginForm'
 import TodoProvider from '../conponents/ToDoAppV2/TodoContext'
 
 const AppRouter = () => {
-    const [loggedIn, setLoggedIn] = useState(false)
+    const [isLoggedIn, setLoggedIn] = useState(false)
     const onLoginSuccess = () => {
         setLoggedIn(true)
     }
@@ -31,7 +31,7 @@ const AppRouter = () => {
     return (
         <div>
             {
-                !loggedIn ?
+                !isLoggedIn ?
                     <Router>
                         <Switch>
                             <LoginForm onLoginSuccess={onLoginSuccess} />

@@ -5,7 +5,11 @@ import ReactGlobalTable from './ReactGlobalTable'
 import { FaEye } from "react-icons/fa"
 import users from '../../../data/userTableListData.json'
 
-
+/**
+ * Component for showing it's built to materialize, filter, sort, group, aggregate, 
+ * paginate and display massive data sets using a very small API surface.
+ * @returns 
+ */
 const ReactTable = () => {
     const userColumns = useMemo(() => usersHead, [])
     const userData = useMemo(() => users, [])
@@ -32,7 +36,9 @@ const ReactTable = () => {
 }
 
 export default ReactTable
-
+/**
+ * Table Thead column
+ */
 export const usersHead = [
     {
         Header: "Full Name",

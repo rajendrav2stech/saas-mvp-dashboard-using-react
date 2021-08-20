@@ -4,6 +4,19 @@ import { Link } from 'react-router-dom'
 import { FaArrowRight } from "react-icons/fa"
 import PropTypes from 'prop-types'
 
+/**
+ * Component for showing details of Resturant.
+ * @param {string} logo - Logo of the Resturant 
+ * @param {string} name - Name of the Resturant
+ * @param {string} description - Description of the Resturant
+ * @param {string} address - Address of the Resturant
+ * @param {number} phone_number - Address of the Resturant
+ * @param {string} type - Type of the Resturant
+ * @param {number} uid - Unique Id 
+ * @returns (
+ *  <Card /> Card Componets
+ * )
+ */
 const ResturantCard = ({ items }) => {
     const { logo, name, description, address, phone_number, type, uid } = items
     return (
@@ -28,11 +41,19 @@ const ResturantCard = ({ items }) => {
 }
 
 ResturantCard.propTypes = {
+    /**
+     * Resturant Object propsTyps
+     */
     items: PropTypes.shape({
+        // logo - Resturant Logo
         logo: PropTypes.string,
+        // name - Name of the Resturant
         name: PropTypes.string,
+        // description - Description of the Resturant
         description: PropTypes.string,
+        // address - Address of the Resturant
         address: PropTypes.string,
+        // phone_number - Address of the Resturant
         phone_number: PropTypes.string,
     }),
 }

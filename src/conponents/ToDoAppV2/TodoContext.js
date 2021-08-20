@@ -4,6 +4,12 @@ const initialState = {
     todo: []
 }
 export const TodoContext = createContext(initialState)
+/**
+ * 
+ * @param {string} state - A reducer is a pure function that takes an action and the previous state of the application and returns the new state.
+ * @param {Function} action - The action describes what happened and it is the reducer's job to return the new state based on that action.
+ * @returns 
+ */
 const reducer = (state, action) => {
     switch (action.type) {
         case 'add_todo':
@@ -25,6 +31,13 @@ const reducer = (state, action) => {
             return state
     }
 }
+/**
+ * 
+ * @param {children} children - children is a special property of React components which contains any child elements defined within the component 
+ * @returns (
+ *  <TodoContext.Provider /> - Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes.
+ * )
+ */
 const TodoProvider = ({ children }) => {
     const [toDoForms, dispatch] = useReducer(reducer, initialState)
     const addToDo = (todo) => {

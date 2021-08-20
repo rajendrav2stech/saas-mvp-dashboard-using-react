@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { Badge, Button } from 'react-bootstrap'
+import { Badge, Button, Form } from 'react-bootstrap'
 import ModalPopup from '../common/ModalPopup/ModalPopup'
 import ReactGlobalTable from '../common/ReactTable/ReactGlobalTable'
-import TodoForm from './TodoForm'
 import ToDoTable from './ToDoTable'
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 const Todo = () => {
+    // table thead column 
     let ourColm = [
         {
             Header: 'Title',
@@ -49,7 +49,7 @@ const Todo = () => {
             Cell: ({ row }) => {
                 return (
                     <div style={{ textAlign: 'center' }}>
-                        <FaEdit onClick={(e) => { handelEdit(row.original.id) }} className="edit_icon" />
+                        <FaEdit onClick={(e) => { handleEdit(row.original.id) }} className="edit_icon" />
                         <FaTrash style={{ marginLeft: 4 }} onClick={(e) => { passData(row.original.id, row.original.title) }} className="delete_icon" />
                     </div>
                 )
@@ -72,7 +72,7 @@ const Todo = () => {
         status: '',
     })
     // // HANDEl ONCHANGE
-    const onChangeHandel = (event) => {
+    const onChangeHandler = (event) => {
         event.preventDefault()
         const target = event.target
         const name = target.name
@@ -83,7 +83,7 @@ const Todo = () => {
         })
     }
     // HANDEl SUBMIT 
-    const submitHandel = (event) => {
+    const submitHandler = (event) => {
         const form = event.currentTarget
         event.preventDefault()
         event.stopPropagation()
@@ -106,6 +106,11 @@ const Todo = () => {
             setUpdateToDo(ourRowUpdate)
             setSetEditID(null)
             setValidated(false)
+            setToDoForm({
+                title: '',
+                description: '',
+                status: '',
+            })
         } else {
             const dataUpdate = (
                 [...updateToDo, { ...toDoForm, id: new Date().getTime().toString() }]
@@ -122,7 +127,7 @@ const Todo = () => {
         setShow(false)
     }
     // HANDEl DELETE 
-    const handelDelete = (deleteId) => {
+    const handleDelete = (deleteId) => {
         let item = [...updateToDo]
         let deleteItem = item.filter((items, index) => {
             return (items.id !== deleteId)
@@ -143,7 +148,7 @@ const Todo = () => {
         setDelTitle(title)
     }
     // HANDEl EDIT 
-    const handelEdit = (editId) => {
+    const handleEdit = (editId) => {
         let oureditItem = [...updateToDo]
         let editItem = oureditItem.find((items, index) => {
             return items.id === editId
@@ -168,18 +173,67 @@ const Todo = () => {
         })
     }
 
+
     return (
         <div className="rm-todo-form">
-            <TodoForm
-                title={toDoForm.title}
-                description={toDoForm.description}
-                status={toDoForm.status}
-                submitHandel={submitHandel}
-                onChangeHandel={onChangeHandel}
-                updateButton={updateButton}
-                cancelHandel={cancelHandel}
-                validated={validated}
-            />
+            <Form noValidate validated={validated} action="" onSubmit={submitHandler}>
+                <div>
+                    <h4 className="rm_global_heading">To Do App</h4>
+                </div>
+                <Form.Group>
+                    <Form.Label>Title</Form.Label>
+                    <Form.Control
+                        className="form-control"
+                        type="text"
+                        placeholder="Enter Title"
+                        name="title"
+                        value={toDoForm.title}
+                        onChange={onChangeHandler}
+                        required
+                    />
+                    <Form.Control.Feedback type="invalid">Please provide a valid Title.</Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Description</Form.Label>
+                    <Form.Control
+                        as="textarea"
+                        rows={3}
+                        className="form-control"
+                        type="description"
+                        placeholder="Enter description"
+                        name="description"
+                        value={toDoForm.description}
+                        onChange={onChangeHandler}
+                        required
+                    />
+                    <Form.Control.Feedback type="invalid">Please provide a valid Description.</Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Status</Form.Label>
+                    <Form.Control
+                        required
+                        as="select"
+                        name="status"
+                        value={toDoForm.status}
+                        onChange={onChangeHandler}
+                    >
+                        <option value="">Select Status</option>
+                        <option value="todo">Todo</option>
+                        <option value="inProgress">In Progress</option>
+                        <option value="complete">Complete</option>
+                    </Form.Control>
+                    <Form.Control.Feedback type="invalid">Please select your valid Status.</Form.Control.Feedback>
+                </Form.Group>
+                <br />
+                {
+                    updateButton ?
+                        <button type="submit" className="btn btn-primary submit">Submit</button> :
+                        <>
+                            <button type="submit" className="btn btn-success" style={{ borderRadius: 30 }}>Update</button>
+                            <button type="button" className="btn btn-danger" style={{ marginLeft: 8, borderRadius: 30 }} onClick={cancelHandel}>Cancel</button>
+                        </>
+                }
+            </Form >
             <br />
             <h5>Using Reusable React Table</h5>
             <ReactGlobalTable
@@ -196,8 +250,8 @@ const Todo = () => {
             <h5>Normal Html Table</h5>
             <ToDoTable
                 updateToDo={updateToDo}
-                handelEdit={handelEdit}
-                handelDelete={handelDelete}
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
                 editID={editID}
                 show={show}
                 handleClose={handleClose}
@@ -209,7 +263,7 @@ const Todo = () => {
 
             <ModalPopup
                 show={show}
-                handelDelete={handelDelete}
+                handleDelete={handleDelete}
                 handleClose={handleClose}
                 modalTitle={"To Do App"}
             >
@@ -218,7 +272,7 @@ const Todo = () => {
                     <Button variant="secondary" onClick={handleClose}>
                         Cancel
                     </Button>
-                    <Button style={{ marginLeft: 8 }} variant="danger" onClick={() => handelDelete(delId)}>
+                    <Button style={{ marginLeft: 8 }} variant="danger" onClick={() => handleDelete(delId)}>
                         Delete
                     </Button>
                 </div>

@@ -7,16 +7,16 @@ import { FaSearch } from "react-icons/fa"
 
 const Resturant = () => {
     let ourData = restaurantData
-    const [serchItems, setSerchItems] = useState(ourData)
+    const [searchItems, setSerchItems] = useState(ourData)
     const [curentPage, setCurentPage] = useState(1)
     const pageSize = 6
-    const searchInpur = useRef(null)
+    const searchInput = useRef(null)
 
     // GET CURENT PAGE
     const indexOfLastPage = curentPage * pageSize
     const indexOfFirstPage = indexOfLastPage - pageSize
     // const curentPosts = ourData.slice(indexOfFirstPage, indexOfLastPage)
-    const curentPageSurch = serchItems.slice(indexOfFirstPage, indexOfLastPage)
+    const curentPageSurch = searchItems.slice(indexOfFirstPage, indexOfLastPage)
 
     // PAGINATE 
     const paginate = (number) => {
@@ -24,7 +24,7 @@ const Resturant = () => {
     }
     // SEARCH HANDEL
     const onSearchHandel = () => {
-        let serchValue = searchInpur.current.value
+        let serchValue = searchInput.current.value
         const dataItems = ourData.filter((items) => {
             return items.name.toLowerCase().includes(serchValue.toLowerCase())
         })
@@ -42,7 +42,7 @@ const Resturant = () => {
                         </div>
                         <div className="search_bar">
                             <input type="text"
-                                ref={searchInpur}
+                                ref={searchInput}
                                 placeholder="Search by title"
                                 className="form-control"
                                 style={{ width: 300 }}
@@ -54,14 +54,14 @@ const Resturant = () => {
                     {
                         curentPageSurch.length > 0 ? curentPageSurch.map((items, id1) => {
                             return <ResturantCard items={items} key={id1} />
-                        }) : <h6>No found data for this title <strong style={{ color: 'red' }}>{searchInpur.current.value}</strong></h6>
+                        }) : <h6>No found data for this title <strong style={{ color: 'red' }}>{searchInput.current.value}</strong></h6>
                     }
                     <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                         <PaginationItem
                             pageSize={pageSize}
-                            totalPost={serchItems.length}
+                            totalPost={searchItems.length}
                             paginate={paginate}
-                            data={serchItems}
+                            data={searchItems}
                             curentPage={curentPage}
                         />
                     </div>

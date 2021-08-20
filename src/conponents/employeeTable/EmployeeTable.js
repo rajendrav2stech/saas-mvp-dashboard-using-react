@@ -3,6 +3,7 @@ import TableComponents from '../common/HtmlTable/TableComponents'
 import { Container, Row, Col } from 'react-bootstrap'
 
 const EmployeeTable = () => {
+    // table thead column - employe list
     let employeHeadData = [
         {
             name: "Name",
@@ -30,6 +31,7 @@ const EmployeeTable = () => {
         },
 
     ]
+    // table tbody column - employe - list
     let employeBodyData = [
         {
             "id": 1,
@@ -262,6 +264,7 @@ const EmployeeTable = () => {
             }
         }
     ]
+    // table thead column - User List
     let userHead = [
         {
             name: "Full Name",
@@ -302,6 +305,7 @@ const EmployeeTable = () => {
         },
 
     ]
+    // table tbody column - User List
     let userBody = [
         {
             "id": 1574,

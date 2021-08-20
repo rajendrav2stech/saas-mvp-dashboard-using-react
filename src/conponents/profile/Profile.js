@@ -4,6 +4,9 @@ import { Container, Row, Col, Card } from 'react-bootstrap'
 import profileUser from '../../data/userProfileData.json'
 import { FaRegEnvelope, FaPhoneAlt, FaGlobeAmericas, FaBirthdayCake, FaAddressCard } from "react-icons/fa"
 
+/**
+ * Component for showing details of Profile.
+ */
 const Profile = () => {
     return (
         <div className="rm-body">

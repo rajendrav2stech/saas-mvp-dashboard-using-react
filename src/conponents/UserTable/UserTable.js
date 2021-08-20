@@ -5,6 +5,10 @@ import { Col, Container, Row, Table } from 'react-bootstrap'
 import userData from '../../data/userTableListData.json'
 import { FaSearch } from "react-icons/fa"
 
+/**
+ * Component for showing details of the user table
+ * @returns 
+ */
 const UserTable = () => {
     let ourData = userData
     const [table, setTable] = useState(ourData)
@@ -61,7 +65,7 @@ const UserTable = () => {
                         <Table striped bordered hover size="sm">
                             <thead style={{ backgroundColor: '#c1c1c1' }}>
                                 <tr>
-                                   
+
                                     <th rowSpan="2" style={{ width: 300 }}>Full Name</th>
                                     <th rowSpan="2" style={{ width: 100 }}>Gender</th>
                                     <th rowSpan="2" style={{ width: 100 }}>DOB</th>
@@ -91,7 +95,7 @@ const UserTable = () => {
                         </Table>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                             <div>
-                               Page <strong>{curentPage}</strong> - <strong>{Math.ceil(table.length / pageSize)}</strong> of <strong>{table.length}</strong> Result
+                                Page <strong>{curentPage}</strong> - <strong>{Math.ceil(table.length / pageSize)}</strong> of <strong>{table.length}</strong> Result
                             </div>
                             <div lg={12} md={12} sm={12} xs={12} style={{ display: 'flex', marginBottom: 0, justifyContent: 'flex-end' }}>
                                 <PaginationItem

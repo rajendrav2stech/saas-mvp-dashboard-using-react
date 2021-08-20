@@ -7,6 +7,12 @@ import logo from '../../../src/assets/image/logo.png'
 import PropTypes from 'prop-types'
 
 
+/**
+ * Component for showing contact login form.
+ * @private
+ * @param {isSuccess} bool - Boolean Value
+ * @returns {string} - login contact form
+ */
 
 const LoginForm = ({ onLoginSuccess }) => {
     let history = useHistory()
@@ -15,7 +21,9 @@ const LoginForm = ({ onLoginSuccess }) => {
         userName: '',
         password: '',
     })
- 
+    /**
+     * Input handel onchage
+     */
     const onchangeHaldel = (e) => {
         const target = e.target
         const name = target.name
@@ -25,7 +33,6 @@ const LoginForm = ({ onLoginSuccess }) => {
             [name]: value
         })
     }
-
     const [err, setErr] = useState({ msg: "", })
 
     // HANDLE - SUBMIT PASS - DATA
@@ -90,6 +97,9 @@ const LoginForm = ({ onLoginSuccess }) => {
     )
 }
 LoginForm.propTypes = {
+    /**
+     * login success
+     */
     onLoginSuccess: PropTypes.func.isRequired
 }
 export default LoginForm

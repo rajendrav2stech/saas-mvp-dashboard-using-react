@@ -4,7 +4,44 @@ import ModalPopup from '../common/ModalPopup/ModalPopup'
 import { FaEdit, FaTrash } from "react-icons/fa"
 import PropTypes from 'prop-types'
 
-const ToDoTable = ({ updateToDo, handelEdit, handelDelete, editID, handleClose, show, passData, delId, delTitle }) => {
+/**
+ * 
+ * @param {string} status - get Status color
+ * @returns Switch case
+ */
+const getStatusColor = (status) => {
+    switch (status) {
+        case 'todo': {
+            return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="primary">Todo</Badge> </div>
+        }
+        case 'inProgress': {
+            return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark">In Progress</Badge></div>
+        }
+        case 'complete': {
+            return <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="white">Complete</Badge></div>
+        }
+        default: {
+            return <></>
+        }
+    }
+}
+/**
+ * Component for showing details of the user
+ * @param {Array} updateToDo - The actions will touch upon the CRUD (Update) application 
+ * @param {Function} handleEdit - The actions will touch upon the CRUD (Edit) application
+ * @param {Function} handleDelete -  The actions will touch upon the CRUD (Delete) application
+ * @param {number} editID - The actions will touch upon the CRUD (ID) application 
+ * @param {Function} handleClose - control this Modal utilizing some sort of state (Show)
+ * @param {boolean} show - control this Modal utilizing some sort of state (Show).
+ * @param {number} delId - pass props.todo.id (instead of props.text ) as the argument to our delete function when the button is clicked
+ * @param {string} delTitle - I can change the modal header title dynamically
+ * @param {Function} getStatusColor - getting all status color
+ * @returns (
+ *     retun <Table> Component
+ * )
+ */
+
+const ToDoTable = ({ updateToDo, handleEdit, handleDelete, editID, handleClose, show, passData, delId, delTitle }) => {
 
     return (
         <div>
@@ -25,18 +62,10 @@ const ToDoTable = ({ updateToDo, handelEdit, handelDelete, editID, handleClose, 
                                     <td>{items.title}</td>
                                     <td>{items.description}</td>
                                     <td>
-                                        {
-                                            (items.status === "todo") ?
-                                                <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="primary">Todo</Badge></div>
-                                                : (items.status === "inProgress") ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark">In Progress</Badge></div>
-                                                    : <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="white">Complete</Badge></div>
-                                        }
-                                        {/* {items.status === "todo" ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="primary">Todo</Badge> </div> : null}
-                                        {items.status === "inProgress" ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="warning" text="dark">In Progress</Badge></div> : null}
-                                        {items.status === "complete" ? <div style={{ textAlign: 'center', fontSize: 15, }}><Badge pill bg="success" text="white">Complete</Badge></div> : null} */}
+                                        {getStatusColor(items.status)}
                                     </td>
                                     <td style={{ textAlign: 'center' }}>
-                                        <FaEdit onClick={(e) => { handelEdit(items.id) }} className="edit_icon" />
+                                        <FaEdit onClick={(e) => { handleEdit(items.id) }} className="edit_icon" />
                                         <FaTrash onClick={(e) => { passData(items.id, items.title) }} className="delete_icon" />
                                     </td>
                                 </tr>
@@ -47,7 +76,7 @@ const ToDoTable = ({ updateToDo, handelEdit, handelDelete, editID, handleClose, 
             </Table >
             <ModalPopup
                 show={show}
-                handelDelete={handelDelete}
+                handleDelete={handleDelete}
                 handleClose={handleClose}
                 // delId={delId}
                 // ModalCancelButtonValue={"Cancel"}
@@ -59,7 +88,7 @@ const ToDoTable = ({ updateToDo, handelEdit, handelDelete, editID, handleClose, 
                     <Button variant="secondary" onClick={handleClose}>
                         Cancel
                     </Button>
-                    <Button style={{ marginLeft: 8 }} variant="danger" onClick={() => handelDelete(delId)}>
+                    <Button style={{ marginLeft: 8 }} variant="danger" onClick={() => handleDelete(delId)}>
                         Delete
                     </Button>
                 </div>
@@ -69,14 +98,41 @@ const ToDoTable = ({ updateToDo, handelEdit, handelDelete, editID, handleClose, 
 }
 
 ToDoTable.propTypes = {
+    /**
+     * The actions will touch upon the CRUD (Update) application 
+     */
     updateToDo: PropTypes.any,
-    handelEdit: PropTypes.func.isRequired,
-    handelDelete: PropTypes.func.isRequired,
+    /**
+     * The actions will touch upon the CRUD (Edit) application 
+     */
+    handleEdit: PropTypes.func.isRequired,
+    /**
+     * The actions will touch upon the CRUD (Delete) application 
+     */
+    handleDelete: PropTypes.func.isRequired,
+    /**
+     * The actions will touch upon the CRUD (ID) application 
+     */
     editID: PropTypes.any,
+    /**
+     * control this Modal utilizing some sort of state (isClose).
+     */
     handleClose: PropTypes.func.isRequired,
+    /**
+     * control this Modal utilizing some sort of state (Show).
+     */
     show: PropTypes.bool.isRequired,
+    /**
+     * Pass Data Between a Child Component and a Parent Component 
+     */
     passData: PropTypes.func.isRequired,
+    /**
+     * pass props.todo.id (instead of props.text ) as the argument to our delete function when the button is clicked
+     */
     delId: PropTypes.any,
+    /**
+     * I can change the modal header title dynamically
+     */
     delTitle: PropTypes.any
 }
 export default ToDoTable

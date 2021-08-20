@@ -1,5 +1,9 @@
 import React from 'react'
 
+/**
+ * Component for showing details of Global Loading
+ * @returns Loading screen
+ */
 const LoadinScreen = () => {
     return (
         <div className="boxLoading">

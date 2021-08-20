@@ -2,7 +2,16 @@ import React from 'react'
 import { Modal } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
-const ModalPopup = ({ handelDelete, handleClose, show, delId, children, modalTitle, ModalCancelButtonValue, modalDeleteButtonValue }) => {
+/**
+ * Component for showing details of Modal Popup
+ * @param {Function} handleClose - To close the modal 
+ * @param {boolean} show - Pass the show state variable to the show prop of the Modal component to control the modal behavior
+ * @param {boolean} children - children is a special property of React components which contains any child elements defined within the component
+ * @param {string} modalTitle - Motal title 
+ * @returns Modal Componets
+ */
+
+const ModalPopup = ({ handleClose, show, children, modalTitle }) => {
     return (
         <div>
             <Modal show={show} onHide={handleClose}>
@@ -17,9 +26,21 @@ const ModalPopup = ({ handelDelete, handleClose, show, delId, children, modalTit
     )
 }
 ModalPopup.propTypes = {
+    /**
+     * - To close the modal 
+     */
     handleClose: PropTypes.func,
+    /**
+     *  Pass the show state variable to the show prop of the Modal component to control the modal behavior
+     */
     show: PropTypes.any,
+    /**
+     * children is a special property of React components which contains any child elements defined within the component
+     */
     children: PropTypes.any,
+    /**
+     * Motal title 
+     */
     modalTitle: PropTypes.string,
 }
 export default ModalPopup
